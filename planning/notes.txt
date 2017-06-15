@@ -1,0 +1,2 @@
+1) Google maps url accepts arguments in the same was Sinatra accepts id's in
+  URL. Can be used to link to desired locations with google maps.
