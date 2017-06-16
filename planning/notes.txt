@@ -1,2 +1,8 @@
 1) Google maps url accepts arguments in the same was Sinatra accepts id's in
   URL. Can be used to link to desired locations with google maps.
+
+2) not firendly to users in the entire world
+
+3) anyone can change anything on the web site.
+    specific users should only be able to change one or two things related
+    to their needs
