@@ -15,7 +15,8 @@ class DatabaseAssistant
     SqlRunner.run(sql_command)
   end
 
-  def DatabaseAssistant.find(id, table_name)
+  def DatabaseAssistant.find(id, values_to_search)
+    where_clause = DatabaseAssistant.build_where_clause(values)
     sql_command = "SELECT * FROM #{table_name} WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql_command, values)[0]
@@ -24,9 +25,10 @@ class DatabaseAssistant
 
   def DatabaseAssistant.build_where_clause(values)
     result = "WHERE "
+    argument_count = 1
     values.each() do |key, value|
-      value = "'#{value}'" if(value.class == "".class)
-      result += "#{key} = #{value} AND "
+      result += "#{key} = $#{argument_count} AND "
+      argument_count += 1
     end
     return result[0..-6]
   end

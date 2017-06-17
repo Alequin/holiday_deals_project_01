@@ -26,7 +26,7 @@ class TestDatabaseAssistant < MiniTest::Test
     values = {
       "id" => 50
     }
-    expected = "WHERE id = 50"
+    expected = "WHERE id = $1"
     result = DatabaseAssistant.build_where_clause(values)
     assert_equal(expected, result)
   end
@@ -39,7 +39,7 @@ class TestDatabaseAssistant < MiniTest::Test
       "height" => 180,
       "pet" => "teddy"
     }
-    expected = "WHERE id = 50 AND name = 'James' AND age = 24 AND height = 180 AND pet = 'teddy'"
+    expected = "WHERE id = $1 AND name = $2 AND age = $3 AND height = $4 AND pet = $5"
     result = DatabaseAssistant.build_where_clause(values)
     assert_equal(expected, result)
   end
