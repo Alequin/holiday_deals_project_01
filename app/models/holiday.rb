@@ -4,8 +4,8 @@ require_relative("../db/database_assistant.rb")
 
 class Holiday < DatabaseAssistant
 
-  attr_reader :id
-  attr_accessor :name, :description, :stars, :image_url
+  attr_reader :id, :travel_agent_id, :hotel_id
+  attr_accessor :cost_per_person, :nights
 
   @@TABLE_NAME = "Holidays"
 
@@ -47,6 +47,14 @@ class Holiday < DatabaseAssistant
 
   def update()
     super(get_table_hash)
+  end
+
+  def set_hotel(hotel)
+    @hotel_id = hotel.id
+  end
+
+  def set_travel_agent(travel_agent)
+    @travel_agent_id = travel_agent.id
   end
 
   private
