@@ -22,6 +22,15 @@ class DatabaseAssistant
     return result
   end
 
+  def DatabaseAssistant.build_where_clause(values)
+    result = "WHERE "
+    values.each() do |key, value|
+      value = "'#{value}'" if(value.class == "".class)
+      result += "#{key} = #{value} AND "
+    end
+    return result[0..-6]
+  end
+
   def initialize(id, table_name)
     @id = id if id
     @table_name = table_name
