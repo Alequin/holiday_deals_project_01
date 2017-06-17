@@ -1,4 +1,3 @@
-require_relative("../db/sql_runner.rb")
 require_relative("../db/database_assistant.rb")
 
 class TravelAgent < DatabaseAssistant
