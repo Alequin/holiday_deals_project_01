@@ -12,7 +12,25 @@ class TravelAgent < DatabaseAssistant
     super(options["id"], @@TABLE_NAME)
     @name = options["name"]
     @description = options["description"]
-    @logo_path = options["logo_url"]
+    @logo_url = options["logo_url"]
+  end
+
+  def get_table_hash()
+    data {
+      "id" => @id,
+      "name" => @name,
+      "description" => @description,
+      "logo_url" = > @logo_url
+    }
+    return data
+  end
+
+  def save()
+    save(get_table_hash)
+  end
+
+  def update()
+    update(get_table_hash)
   end
 
 end
