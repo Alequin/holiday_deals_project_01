@@ -1,3 +1,5 @@
+require("PG")
+
 
 module SqlRunner
 

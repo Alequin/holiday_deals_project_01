@@ -4,18 +4,18 @@ class DatabaseAssistant
 
   attr_reader :id
 
-  def Crud.get_all(table_name)
+  def DatabaseAssistant.get_all(table_name)
     sql_command = "SELECT * FROM #{table_name}"
     results = SqlRunner.run(sql_command)
     return results
   end
 
-  def Crud.delete_all(table_name)
+  def DatabaseAssistant.delete_all(table_name)
     sql_command = "DELETE FROM #{table_name}"
     SqlRunner.run(sql_command)
   end
 
-  def Crud.find(id, table_name)
+  def DatabaseAssistant.find(id, table_name)
     sql_command = "SELECT * FROM #{table_name} WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql_command, values)[0]

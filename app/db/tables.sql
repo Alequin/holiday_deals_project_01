@@ -9,7 +9,7 @@ CREATE TABLE travel_agents(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
   description TEXT,
-  logo_path VARCHAR(255)
+  logo_url VARCHAR(255)
 );
 
 CREATE TABLE hotels(

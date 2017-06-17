@@ -3,7 +3,7 @@ require_relative("../db/database_assistant.rb")
 
 class TravelAgent < DatabaseAssistant
 
-  attr_reader :id,
+  attr_reader :id
   attr_accessor :name, :description, :logo_url
 
   @@TABLE_NAME = "travel_agents"
@@ -16,21 +16,20 @@ class TravelAgent < DatabaseAssistant
   end
 
   def get_table_hash()
-    data {
-      "id" => @id,
+    data = {
       "name" => @name,
       "description" => @description,
-      "logo_url" = > @logo_url
+      "logo_url" => @logo_url
     }
     return data
   end
 
   def save()
-    save(get_table_hash)
+    super(get_table_hash)
   end
 
   def update()
-    update(get_table_hash)
+    super(get_table_hash)
   end
 
 end
