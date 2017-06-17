@@ -40,4 +40,6 @@ module SqlRunner
     return result[0..-3]
   end
 
+  private_class_method :build_column_string, :build_placeholder_string
+
 end
