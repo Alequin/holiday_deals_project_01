@@ -49,6 +49,18 @@ class Holiday < DatabaseAssistant
     super(get_table_hash)
   end
 
+  def get_hotel()
+    return Hotel.find_by_id(@hotel_id)
+  end
+
+  def get_travel_agent()
+    return TravelAgent.find_by_id(@travel_agent_id)
+  end
+
+  def get_deals()
+    return Deal.find({"holiday_id" => @id})
+  end
+
   def set_hotel(hotel)
     @hotel_id = hotel.id
   end
