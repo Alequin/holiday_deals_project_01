@@ -1,6 +1,9 @@
 require("date")
 
+require_relative("../db/sql_runner.rb")
 require_relative("../db/database_assistant.rb")
+require_relative("hotel.rb")
+require_relative("holiday.rb")
 
 class Deal < DatabaseAssistant
 
@@ -47,6 +50,19 @@ class Deal < DatabaseAssistant
 
   def update()
     super(get_table_hash)
+  end
+
+  def get_holiday()
+    return Holiday.find_by_id(@holiday_id)
+  end
+
+  def get_hotel()
+    sql_command = "SELECT hotels.* FROM holidays
+      INNER JOIN hotels
+      ON holidays.hotel_id = hotels.id
+      WHERE holidays.id = #{@holiday_id}"
+    hotel = SqlRunner.run(sql_command)[0]
+    return Hotel.new(hotel)
   end
 
   def set_percentage_off(amount)
