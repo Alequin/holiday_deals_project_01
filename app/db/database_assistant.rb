@@ -33,7 +33,7 @@ class DatabaseAssistant
   end
 
   def initialize(id, table_name)
-    @id = id if id
+    @id = id.to_i if id
     @table_name = table_name
   end
 
