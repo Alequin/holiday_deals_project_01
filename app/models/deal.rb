@@ -11,7 +11,7 @@ class Deal < DatabaseAssistant
 
   def initialize(options)
     super(options["id"], @@TABLE_NAME)
-    @hotel_id = options["hotel_id"]
+    @holiday_id= options["holiday_id"]
     @percentage_off = options["percentage_off"].to_i
     set_start_date(options["start_date"])
     set_end_date(options["end_date"])
@@ -38,7 +38,7 @@ class Deal < DatabaseAssistant
   end
 
   def Deal.map_sql_results(result)
-    return result.map(){|hotel| Deal.new(hotel)}
+    return result.map(){|deal| Deal.new(deal)}
   end
 
   def save()
