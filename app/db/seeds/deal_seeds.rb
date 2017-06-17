@@ -17,7 +17,7 @@ def make_deals(holidays)
     start_month = rand(1..11)
     end_month = rand(start_month+1..12)
 
-    deals[num] = Holiday.new({
+    deals[num] = Deal.new({
       "holiday_id" => holiday.id,
       "percentage_off" => rand(10..50),
       "start_date" => "2017-#{start_month}-#{start_day}",

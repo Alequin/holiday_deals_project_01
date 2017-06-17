@@ -7,7 +7,7 @@ class Holiday < DatabaseAssistant
   attr_reader :id, :travel_agent_id, :hotel_id
   attr_accessor :cost_per_person, :nights
 
-  @@TABLE_NAME = "Holidays"
+  @@TABLE_NAME = "holidays"
 
   def initialize(options)
     super(options["id"], @@TABLE_NAME)

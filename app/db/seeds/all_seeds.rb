@@ -12,7 +12,8 @@ def save_all_models(models)
   end
 end
 
-Holiday.delete_all
+Deal.delete_all()
+Holiday.delete_all()
 TravelAgent.delete_all()
 Hotel.delete_all()
 
