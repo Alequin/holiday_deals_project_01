@@ -18,7 +18,7 @@ module SqlRunner
     results = {
       columns: columns,
       values: values
-
+    }
     return results
   end
 
@@ -31,7 +31,11 @@ module SqlRunner
   end
 
   def SqlRunner.build_placeholder_string(values)
-    return build_column_string((1...values.length))
+    result = ""
+    (1..values.length).each() do |num|
+      result += "$#{num}, "
+    end
+    return result[0..-3]
   end
 
 end
