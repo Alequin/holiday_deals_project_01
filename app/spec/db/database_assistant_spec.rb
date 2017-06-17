@@ -2,19 +2,23 @@ require ("minitest/autorun")
 require ("minitest/rg")
 require_relative ("../../db/database_assistant.rb")
 
-class FizzBuzzTest < MiniTest::Test
+class TestDatabaseAssistant < MiniTest::Test
+
+  def setup
+    @assistant = DatabaseAssistant.new(0, "table")
+  end
 
   def test_build_column_string()
     columns = ["name", "age", "height", "hair_colour"]
     expected = "name, age, height, hair_colour"
-    result = SqlRunner.build_column_string(columns)
+    result = @assistant.send(:build_column_string, columns)
     assert_equal(expected, result)
   end
 
   def test_build_placeholder_string()
     columns = ["name", "age", "height", "hair_colour"]
     expected = "$1, $2, $3, $4"
-    result = SqlRunner.build_placeholder_string(columns)
+    result = @assistant.send(:build_placeholder_string, columns)
     assert_equal(expected, result)
   end
 
