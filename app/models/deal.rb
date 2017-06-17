@@ -1,4 +1,4 @@
-require_relative("../db/database_assistant.rb")
+require("date")
 
 require_relative("../db/database_assistant.rb")
 
@@ -13,8 +13,8 @@ class Deal < DatabaseAssistant
     super(options["id"], @@TABLE_NAME)
     @hotel_id = options["hotel_id"]
     @percentage_off = options["percentage_off"].to_i
-    @start_date = options["start_date"]
-    @end_date = options["end_date"]
+    set_start_date(options["start_date"])
+    set_end_date(options["end_date"])
   end
 
   def Deal.get_all()
@@ -49,12 +49,12 @@ class Deal < DatabaseAssistant
     super(get_table_hash)
   end
 
-  def set_start_date(string)
-
+  def set_start_date(date)
+    @start_date = init_date_from_string(date)
   end
 
-  def end_start_date(string)
-
+  def end_start_date(date)
+    @end_date = init_date_from_string(date)
   end
 
   private
@@ -63,10 +63,20 @@ class Deal < DatabaseAssistant
     data = {
       "holiday_id" => @holiday_id,
       "percentage_off" => @percentage_off,
-      "start_date" => @start_date,
-      "end_date" => @end_date
+      "start_date" => @start_date.to_s,
+      "end_date" => @end_date.to_s
     }
     return data
+  end
+
+  def init_date_from_string(date)
+    split_date = date.split("-")
+    result = Date.new(
+      split_date[0].to_i,
+      split_date[1].to_i,
+      split_date[2].to_i
+    )
+    return result
   end
 
 end
