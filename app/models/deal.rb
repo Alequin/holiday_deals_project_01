@@ -49,6 +49,10 @@ class Deal < DatabaseAssistant
     super(get_table_hash)
   end
 
+  def set_percentage_off(amount)
+    @percentage_off = amount if(amount > 0 && amount < 100)
+  end
+
   def set_start_date(date)
     @start_date = init_date_from_string(date)
   end
