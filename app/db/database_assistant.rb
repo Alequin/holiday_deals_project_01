@@ -37,6 +37,11 @@ class DatabaseAssistant
     @table_name = table_name
   end
 
+  def delete()
+    sql_command = "DELETE FROM #{@table_name} WHERE id = #{@id}"
+    SqlRunner.run(sql_command)
+  end
+
   private
 
   def save(to_insert)
@@ -53,11 +58,6 @@ class DatabaseAssistant
       (#{query_peices[:columns]}) = (#{query_peices[:values]})
       WHERE id = #{@id}"
     SqlRunner.run(sql_command, to_insert.values)
-  end
-
-  def delete()
-    sql_command = "DELETE FROM #{@table_name} WHERE id = #{@id}"
-    SqlRunner.run(sql_command)
   end
 
   def prepare_columns_and_values(to_insert)
