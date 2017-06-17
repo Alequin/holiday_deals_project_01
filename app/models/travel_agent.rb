@@ -15,6 +15,19 @@ class TravelAgent < DatabaseAssistant
     @logo_url = options["logo_url"]
   end
 
+  def TravelAgent.get_all()
+    result = DatabaseAssistant.get_all(@@TABLE_NAME)
+    return TravelAgent.map_sql_result(result)
+  end
+
+  def TravelAgent.delete_all()
+    DatabaseAssistant.delete_all(@@TABLE_NAME)
+  end
+
+  def TravelAgent.map_sql_result(result)
+    return result.map(){|agent| TravelAgent.new(agent)}
+  end
+
   def get_table_hash()
     data = {
       "name" => @name,
