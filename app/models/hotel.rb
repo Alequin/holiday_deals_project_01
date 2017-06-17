@@ -38,7 +38,7 @@ class Hotel < DatabaseAssistant
   end
 
   def Hotel.map_sql_results(result)
-    return result.map(){|agent| Hotel.new(agent)}
+    return result.map(){|hotel| Hotel.new(hotel)}
   end
 
   def save()
