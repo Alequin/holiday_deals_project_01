@@ -1,5 +1,6 @@
 require ("minitest/autorun")
 require ("minitest/rg")
+require("date")
 require_relative ("../../models/deal.rb")
 
 class TestDatabaseAssistant < MiniTest::Test
@@ -37,11 +38,19 @@ class TestDatabaseAssistant < MiniTest::Test
   end
 
   def test_set_dates__incorrect_value()
-
+    end_date_input = "2016-01-01"
+    @deal.set_end_date(end_date_input)
+    assert_equal("2017-05-01", @deal.end_date.to_s)
   end
 
-  def test_deal_active()
+  def test_deal_active__true()
+    date = Date.new(2017,03,01)
+    assert(@deal.active?(date))
+  end
 
+  def test_deal_active__false()
+    date = Date.new(2019,01,01)
+    assert(!@deal.active?(date))
   end
 
 end

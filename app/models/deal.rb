@@ -62,7 +62,7 @@ class Deal < DatabaseAssistant
     @end_date = end_date if(end_date > @start_date)
   end
 
-  def deal_active?(current_date)
+  def active?(current_date)
     return !(current_date < @start_date || current_date > @end_date)
   end
 
