@@ -1,6 +1,5 @@
 require_relative("../../models/travel_agent.rb")
 
-
 # Good images
 # https://publicdomainvectors.org/en/free-clipart/Lobster-vector-image/1402.html
 
