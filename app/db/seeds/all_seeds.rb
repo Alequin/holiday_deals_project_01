@@ -3,6 +3,7 @@ require("pry")
 require_relative("travel_agent_seeds.rb")
 require_relative("hotel_seeds.rb")
 require_relative("holiday_seeds.rb")
+require_relative("deal_seeds.rb")
 require_relative("../../models/travel_agent.rb")
 
 def save_all_models(models)
@@ -23,6 +24,9 @@ save_all_models(hotels)
 
 holidays = make_holidays(travel_agents, hotels)
 save_all_models(holidays)
+
+deals = make_deals(holidays)
+save_all_models(deals)
 
 binding.pry
 nil
