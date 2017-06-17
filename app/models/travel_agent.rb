@@ -39,6 +39,16 @@ class TravelAgent < DatabaseAssistant
     return result.map(){|agent| TravelAgent.new(agent)}
   end
 
+  def save()
+    super(get_table_hash)
+  end
+
+  def update()
+    super(get_table_hash)
+  end
+
+  private
+
   def get_table_hash()
     data = {
       "name" => @name,
@@ -46,14 +56,6 @@ class TravelAgent < DatabaseAssistant
       "logo_url" => @logo_url
     }
     return data
-  end
-
-  def save()
-    super(get_table_hash)
-  end
-
-  def update()
-    super(get_table_hash)
   end
 
 end

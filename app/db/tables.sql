@@ -17,7 +17,7 @@ CREATE TABLE hotels(
   name VARCHAR(255),
   description TEXT,
   stars INT2,
-  image_path VARCHAR(255)
+  image_url VARCHAR(255)
 );
 
 CREATE TABLE holidays(
