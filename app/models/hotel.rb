@@ -1,6 +1,7 @@
 require_relative("../db/database_assistant.rb")
+require_relative("deal.rb")
+require_relative("holiday.rb")
 
-require_relative("../db/database_assistant.rb")
 
 class Hotel < DatabaseAssistant
 
@@ -47,6 +48,19 @@ class Hotel < DatabaseAssistant
 
   def update()
     super(get_table_hash)
+  end
+
+  def get_holidays()
+    return Holiday.find({"hotel_id" => @id})
+  end
+
+  def get_deals()
+    sql_command = "SELECT deals.* FROM holidays
+      INNER JOIN deals
+      ON holidays.id = deals.holiday_id
+      WHERE holidays.hotel_id = #{@id}"
+    deals = SqlRunner.run(sql_command)
+    return Deal.map_sql_results(deals)
   end
 
   private
