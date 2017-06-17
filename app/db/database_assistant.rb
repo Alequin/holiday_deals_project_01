@@ -15,11 +15,10 @@ class DatabaseAssistant
     SqlRunner.run(sql_command)
   end
 
-  def DatabaseAssistant.find(id, values_to_search)
-    where_clause = DatabaseAssistant.build_where_clause(values)
-    sql_command = "SELECT * FROM #{table_name} WHERE id = $1"
-    values = [id]
-    result = SqlRunner.run(sql_command, values)[0]
+  def DatabaseAssistant.find(table_name, values_to_search)
+    where_clause = DatabaseAssistant.build_where_clause(values_to_search)
+    sql_command = "SELECT * FROM #{table_name} #{where_clause}"
+    result = SqlRunner.run(sql_command, values_to_search.values)
     return result
   end
 
