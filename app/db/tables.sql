@@ -31,7 +31,7 @@ CREATE TABLE holidays(
 CREATE TABLE deals(
   id SERIAL4 PRIMARY KEY,
   holiday_id INT4 REFERENCES holidays(id),
-  percentage_off INT2,
+  percentage_off INT2 CHECK(percentage_off>0 AND percentage_off<100),
   start_date CHAR(8),
   end_date CHAR(8)
 );
