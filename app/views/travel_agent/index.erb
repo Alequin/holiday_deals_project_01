@@ -1,0 +1,18 @@
+<% @travel_agents.each() do |agent| %>
+
+  <section class="travel_agent_container">
+    <h2><%= agent.name %></h2>
+    <p>
+      <img class="agent_logo_img" src="<%= agent.logo_url %>" alt="<%= agent.name %>'s logo">
+      <%= agent.description %><br><br> Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+      qui officia deserunt mollit anim id est laborum.
+    </p>
+  </section>
+  <p><a href="#">Show holidays by <%= agent.name %></a></p>
+  <hr>
+<% end %>

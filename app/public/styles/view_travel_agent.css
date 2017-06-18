@@ -1,0 +1,26 @@
+.travel_agent_container{
+    width: inherit;
+    clear: left;
+    padding: 0 50px 0 10px;
+    box-sizing: border-box;
+}
+
+.travel_agent_container p{
+  min-height: 200px;
+}
+
+.travel_agent_container img{
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 15px;
+}
+
+.agent_logo_img{
+  width: 200px;
+  height: 200px;
+}
+
+.travel_agent_container hr{
+  clear: both;
+  display: block;
+}
