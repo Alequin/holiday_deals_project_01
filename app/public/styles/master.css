@@ -8,6 +8,10 @@ h2{
   font-size: 30px;
 }
 
+hr{
+  border-color: #d68c04;
+}
+
 #main_container{
   margin: auto;
 }
