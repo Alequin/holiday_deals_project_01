@@ -11,8 +11,8 @@
       <% deals.each() do |deal| %>
         <li>
           <p class="small_text"><%= deal.percentage_off %>% off</p>
-          <p class="small_text">Available:</p>
-          <p class="small_text"><%= deal.start_date.to_s %> - <%= deal.end_date.to_s %></p>
+          <p class="small_text">From: <%= deal.start_date.to_s %></p>
+          <p class="small_text">Till: <%= deal.end_date.to_s %></p>
         </li>
       <% end %>
     </ul>
