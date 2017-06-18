@@ -28,7 +28,7 @@
     <% deals = holiday.get_deals() %>
     <% deals = deals.sort() {|deal1, deal2| deal2.percentage_off <=> deal1.percentage_off } %>
     <% deal = deals.find() {|deal| deal.active?()} %>
-    <% cost = deal ? holiday.cost_per_person*((100-deal.percentage_off.to_f)/100) : holiday.cost_per_person  %>
+    <% cost = deal ? deal.calc_cost_after_deal_applied(holiday.cost_per_person) : holiday.cost_per_person  %>
       <section>
         <div>
           <img class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'">

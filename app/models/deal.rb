@@ -82,6 +82,10 @@ class Deal < DatabaseAssistant
     return !(current_date < @start_date || current_date > @end_date)
   end
 
+  def calc_cost_after_deal_applied(cost)
+    return cost*((100 - @percentage_off.to_f)/100)
+  end
+
   private
 
   def get_table_hash()
