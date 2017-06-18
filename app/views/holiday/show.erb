@@ -12,8 +12,8 @@
         <li>
           <% deal_cost = deal.calc_cost_after_deal_applied(@holiday.cost_per_person) %>
           <p class="small_text">£<%= deal_cost %> - <%= deal.percentage_off %>% off</p>
-          <p class="small_text">From: <%= deal.start_date.to_s %></p>
-          <p class="small_text">Till: <%= deal.end_date.to_s %></p>
+          <p class="small_text">From: <%= deal.get_start_date() %></p>
+          <p class="small_text">Till: <%= deal.get_end_date() %></p>
         </li>
       <% end %>
     </ul>
