@@ -2,7 +2,7 @@
 
   <aside id="view_holidays_aside">
     <h3>Sort by:</h3>
-    <form action="/hotel" method="get">
+    <form action="/holiday" method="get">
       <label for="no-order">No Order
         <input id="no-order" type="radio" name="sort" value="nil">
       </label>
@@ -36,7 +36,7 @@
         <div>
           <h2><%= hotel.name %></h2>
           <h3>City - Country</h3>
-          <p class="medium_text">£<%= cost %> - <%= deal ? "Deal: #{deal.percentage_off}% off" : "No Deals" %></p>
+          <p class="medium_text">£<%= cost %> per night<br><%= deal ? "Deal: #{deal.percentage_off}% off" : "No Deals" %></p>
           <p class="medium_text"></p>
           <p class="medium_text">Number of Nights: <%= holiday.nights %></p>
         </div>
