@@ -1,6 +1,27 @@
-<aside id="view_hotels_aside">
+<div id="view_hotels_main_container">
+  <aside id="view_hotels_aside">
 
-</aside>
-<section id="view_hotels_section">
+  </aside>
+  <section id="view_hotels_section">
+    <% @hotels.each() do |hotel| %>
+      <article>
+        <div>
+          <h2>
+            <%= hotel.name %>
+            <% hotel.stars.times() do %>
+            <img src="/images/star.png" alt="image of a star">
+            <% end %>
+          </h2>
+          <p>City   -   Country</p>
+        </div>
 
-</section>
+        <p class="medium_text">
+          <img src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s picture">
+          <%= hotel.description %>
+        </p>
+        <p class="show_holiday_link"><a href="#">View Holidays at <%= hotel.name %></a></p>
+      </article>
+      <hr>
+    <% end %>
+  </section>
+</div>
