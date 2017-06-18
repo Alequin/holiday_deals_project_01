@@ -8,6 +8,10 @@ h2{
   font-size: 30px;
 }
 
+hr{
+  border-color: #d68c04;
+}
+
 #main_container{
   margin: auto;
 }
@@ -25,4 +29,8 @@ h2{
 .main_logo{
   width: 75px;
   height: 75px;
+}
+
+footer{
+  height: 50px;
 }

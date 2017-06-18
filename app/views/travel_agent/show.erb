@@ -1,1 +1,20 @@
-
+<section id="agent_offers_container">
+  <img src="<%= @travel_agent.logo_url %>" alt="<%= @travel_agent.name %>'s logo'">
+  <div>
+    <h2><%= @travel_agent.name %></h2>
+    <div id="options_container">
+      <article>
+        <p><a href="#">View Deals</a></p>
+        <p><a href="#">View Holidays</a></p>
+        <p><a href="#">View Hotels</a></p>
+      </article>
+      <article id="options_row_two">
+        <p><a href="#">View Cities</a></p>
+        <p><a href="#">View Countries</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+<section>
+  <p class="medium_text"><%= @travel_agent.description %></p>
+</section>

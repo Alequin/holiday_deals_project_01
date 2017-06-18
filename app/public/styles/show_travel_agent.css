@@ -1,0 +1,46 @@
+#agent_offers_container{
+  width: inherit;
+  display: flex;
+  margin-top: 40px; 
+}
+
+#agent_offers_container img{
+  width: 350px;
+  height: 350px;
+}
+
+#agent_offers_container div{
+  flex: 1;
+  height: 250px;
+}
+
+#agent_offers_container h2{
+  text-align: center;
+}
+
+#options_container article{
+  display: flex;
+  padding-top: 20px;
+}
+
+#options_container p{
+  text-align: center;
+  flex: 1;
+  height: 50px;
+  border: 1px solid #d68c04;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+
+#options_container a{
+  color: black;
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+
+#options_row_two{
+  width: 70%;
+  margin: auto;
+}
