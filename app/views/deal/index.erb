@@ -1,0 +1,39 @@
+<div id="view_deals_main_container">
+
+  <aside id="view_deals_aside">
+    <h3>Sort by:</h3>
+    <form action="/holiday" method="get">
+      <label for="no-order">No Order
+        <input id="no-order" type="radio" name="sort" value="nil">
+      </label>
+      <label for="hotel-name">Price
+        <input id="hotel-name" type="radio" name="sort" value="cost_per_person">
+      </label>
+      <label for="hotel-name">Hotel Name
+        <input id="hotel-name" type="radio" name="sort" value="--">
+      </label>
+      <label for="city">Deals
+        <input id="city" type="radio" name="sort" value="--">
+      </label>
+      <label for="country">Nights
+        <input id="country" type="radio" name="sort" value="nights">
+      </label>
+      <input id="sort_submit" type="submit">
+    </form>
+  </aside>
+
+  <section id="view_deals_section">
+    <% @deals.each() do |deal| %>
+    <% hotel = deal.get_hotel() %>
+      <section>
+        <div>
+          <img class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'">
+        </div>
+        <div>
+
+        </div>
+      </section>
+      <hr>
+    <% end %>
+  </section>
+</div>

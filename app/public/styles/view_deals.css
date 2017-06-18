@@ -1,0 +1,34 @@
+#view_deals_main_container{
+  display: flex
+}
+
+#view_deals_aside{
+  flex: 20;
+  height: 200px;
+}
+
+#view_deals_aside label{
+  display: block;
+}
+
+#view_deals_section{
+  flex: 80;
+  margin-left: 15px;
+  border-left: 1px solid #d68c04;
+  padding-left: 10px;
+  min-width: 650px;
+}
+
+#view_deals_section section{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#view_deals_section div{
+  flex: 1;
+  text-align: center;
+}
+
+#view_deals_section img{
+  width: 95%;
+}
