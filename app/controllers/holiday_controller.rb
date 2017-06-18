@@ -9,3 +9,8 @@ get('/holiday') do
   @holidays = Holiday.get_all() if(!@holidays)
   erb(:"holiday/index")
 end
+
+get('/holiday/:id') do
+  @holiday = Holiday.find_by_id(params["id"])
+  erb(:"holiday/show")
+end

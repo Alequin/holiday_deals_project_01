@@ -21,6 +21,12 @@ hr{
   padding: 0 15px 0 15px;
 }
 
+.small_text{
+  font-size: 16px;
+  line-height: 25px;
+  color: #4d4f51;
+}
+
 .medium_text{
   font-size: 20px;
   line-height: 25px;

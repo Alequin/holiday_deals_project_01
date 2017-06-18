@@ -1,0 +1,44 @@
+<% hotel = @holiday.get_hotel() %>
+<% agent = @holiday.get_travel_agent() %>
+<% deals = @holiday.get_deals() %>
+<% deals = deals.sort() {|deal1, deal2| deal2.percentage_off <=> deal1.percentage_off } %>
+<% cost = @holiday.cost_per_person %>
+
+<div id="show_holidays_main_container">
+  <aside id="show_holidays_aside">
+    <h3>Deals For This Holiday</h3>
+    <ul>
+      <% deals.each() do |deal| %>
+        <li>
+          <p class="small_text"><%= deal.percentage_off %>% off</p>
+          <p class="small_text">Available:</p>
+          <p class="small_text"><%= deal.start_date.to_s %> - <%= deal.end_date.to_s %></p>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+
+  <section id="show_holidays_section">
+
+      <section>
+        <div>
+          <img class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'">
+        </div>
+        <div>
+          <h2><%= hotel.name %></h2>
+          <h3>City - Country</h3>
+          <section id="details_container">
+            <div>
+              <p>Provided By</p>
+              <img src="<%= agent.logo_url %>" alt="">
+              <p><%= agent.name %></p>
+            </div>
+            <div>
+              <p class="medium_text">£<%= cost %> per night</p>
+              <p class="medium_text">Number of Nights: <%= @holiday.nights %></p>
+            </div>
+          </section>
+        </div>
+      </section>
+  </section>
+</div>
