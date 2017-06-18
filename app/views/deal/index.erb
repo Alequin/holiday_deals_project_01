@@ -24,6 +24,7 @@
 
   <section id="view_deals_section">
     <% @deals.each() do |deal| %>
+    <% holiday = deal.get_holiday() %>
     <% hotel = deal.get_hotel() %>
       <section>
         <div>
@@ -32,6 +33,14 @@
         <div>
           <h2><%= hotel.name %></h2>
           <h3>City - Country</h3>
+          <span class="medium_text">
+            <p>
+            £<%= deal.calc_cost_after_deal_applied(holiday.cost_per_person) %>
+             - <%= deal.percentage_off %>% off
+           </p>
+           <p>Number of Nights: <%= holiday.nights %></p>
+           <p>Available: <%= deal.start_date %> - <%= deal.end_date %></p>
+         </span>
         </div>
       </section>
       <hr>
