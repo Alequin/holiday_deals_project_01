@@ -32,11 +32,11 @@
             <img src="/images/star.png" alt="image of a star">
             <% end %>
           </h2>
-          <p>City   -   Country</p>
+          <h3>City   -   Country</h3>
         </div>
 
         <p class="medium_text">
-          <img src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s picture">
+          <img class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s picture">
           <%= hotel.description %>
         </p>
         <p class="show_holiday_link"><a href="/hotel/<%= hotel.id %>">View Holidays at <%= hotel.name %></a></p>

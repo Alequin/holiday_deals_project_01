@@ -1,0 +1,25 @@
+#show_hotel_container h2, #show_hotel_container h3{
+  text-align: center;
+}
+
+#show_hotel_container img{
+  float: right;
+  width: 300px;
+  height: 300px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#show_hotel_container div{
+  display: flex;
+  margin-bottom: 45px;
+}
+
+#show_hotel_container div p{
+  flex: 1;
+  margin: 0 80px 0 80px;
+}
+
+#hotel_description{
+  padding-left: 20px;
+}
