@@ -39,7 +39,7 @@
              - <%= deal.percentage_off %>% off
            </p>
            <p>Number of Nights: <%= holiday.nights %></p>
-           <p>Available: <%= deal.start_date %> - <%= deal.end_date %></p>
+           <p>Available: <%= deal.get_start_date() %> - <%= deal.get_end_date() %></p>
          </span>
         </div>
       </section>

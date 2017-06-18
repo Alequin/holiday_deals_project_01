@@ -9,7 +9,7 @@ times of the year in order to maximise the number of trips for minimum spending.
 MVP:
 
 - Add a Travel agent
-- Add holidays available at an travel agent and view them as a list
+- Add holidays available at a travel agent and view them as a list
 - Add a list of deals for a travel agent where a deal has
   Label string e.g. "10% off"
 - A list of holidays that deal applies to

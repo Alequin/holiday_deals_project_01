@@ -8,7 +8,6 @@ require_relative("holiday.rb")
 class Deal < DatabaseAssistant
 
   attr_reader :id, :hotel_id, :percentage_off,
-    :start_date, :end_date
 
   @@TABLE_NAME = "deals"
 
@@ -50,6 +49,18 @@ class Deal < DatabaseAssistant
 
   def update()
     super(get_table_hash)
+  end
+
+  def get_start_date()
+    return format_date(@start_date)
+  end
+
+  def get_end_date()
+    return format_date(@end_date)
+  end
+
+  def get_end_dates()
+
   end
 
   def get_holiday()
@@ -107,6 +118,11 @@ class Deal < DatabaseAssistant
       split_date[2].to_i
     )
     return result
+  end
+
+  def format_date(date)
+    split_date = (date.to_s).split("-")
+    return "#{split_date[2]}/#{split_date[1]}/#{split_date[0]}"
   end
 
 end
