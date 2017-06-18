@@ -14,17 +14,19 @@
         <img class="main_logo" src="/images/icon.png" alt="Wiki travel logo">
         <h1>Wiki Holiday</h1>
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="/index">Home</a></li>
           <li><a href="#">Deals</a></li>
           <li><a href="#">Holidays</a></li>
           <li><a href="#">Cities</a></li>
           <li><a href="#">Countries</a></li>
-          <li><a href="#">Travel Agents</a></li>
+          <li><a href="/travel_agent">Travel Agents</a></li>
           <li><a href="#">Add To Site</a></li>
         </ul>
       </div>
       <hr>
     </nav>
-    <%= yield %>
+    <div id="main_container" class="page_width">
+      <%= yield %>
+    </div>
   </body>
 </html>
