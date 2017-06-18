@@ -1,0 +1,26 @@
+#home_header{
+  margin: auto;
+  display: flex;
+  margin-top: 20px;
+}
+
+#home_header div{
+  box-sizing: border-box;
+  padding: 0 20px 20px 20px;
+  text-align: center;
+}
+
+#home_header h2{
+  margin: 20px 0 10px 0;
+}
+
+#home_header div{
+  width: 500px;
+  height: 320px;
+}
+
+#home_header img{
+  width: 500px;
+  height: 340px;
+  border-radius: 30px;
+}

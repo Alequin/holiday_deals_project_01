@@ -1,6 +1,8 @@
 require("sinatra")
 require("sinatra/contrib/all") if(development?())
 
+require_relative("controllers/home_controller.rb")
+
 get("/")do
-  erb(:index)
+  redirect to("/index")
 end
