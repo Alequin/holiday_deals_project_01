@@ -78,7 +78,7 @@ class Deal < DatabaseAssistant
     @end_date = end_date if(end_date > @start_date)
   end
 
-  def active?(current_date)
+  def active?(current_date = Date.today())
     return !(current_date < @start_date || current_date > @end_date)
   end
 

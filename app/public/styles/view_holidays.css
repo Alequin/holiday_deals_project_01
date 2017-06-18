@@ -18,3 +18,17 @@
   padding-left: 10px;
   min-width: 650px;
 }
+
+#view_holidays_section section{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#view_holidays_section div{
+  flex: 1;
+  text-align: center;
+}
+
+#view_holidays_section img{
+  width: 95%;
+}
