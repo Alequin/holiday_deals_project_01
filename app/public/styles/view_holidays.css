@@ -32,3 +32,11 @@
 #view_holidays_section img{
   width: 95%;
 }
+
+#view_holidays_section section h2{
+  margin: 0;
+}
+
+#view_holidays_section section h3{
+  margin-top: 5px;
+}
