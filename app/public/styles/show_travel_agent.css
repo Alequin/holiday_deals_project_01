@@ -1,7 +1,7 @@
 #agent_offers_container{
   width: inherit;
   display: flex;
-  margin-top: 40px; 
+  margin-top: 40px;
 }
 
 #agent_offers_container img{
@@ -37,10 +37,19 @@
   color: black;
   display: block;
   padding: 15px;
+  min-width: 150px;
   text-decoration: none;
+}
+
+#options_container p{
+  min-width: 150px;
 }
 
 #options_row_two{
   width: 70%;
   margin: auto;
+}
+
+#show_agent_description{
+  padding: 0 15px 0 15px;
 }

@@ -1,0 +1,13 @@
+#view_hotels_aside{
+  display: inline-block;
+  width: 25%;
+  height: 200px;
+  background: blue;
+}
+
+#view_hotels_section{
+  display: inline-block;
+  height: 200px;
+  width: 70%;
+  background: orange;
+}

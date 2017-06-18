@@ -15,7 +15,8 @@
 }
 
 #home_header div{
-  width: 500px;
+  max-width: 500px
+  min-width: 250px;
   height: 320px;
 }
 
