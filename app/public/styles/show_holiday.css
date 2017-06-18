@@ -51,3 +51,11 @@
   width: 40px;
   height: 40px;
 }
+
+#show_holidays_section h4{
+  margin-bottom: 0;
+}
+
+#show_holidays_section article{
+  padding: 0 20px 0 20px;
+}
