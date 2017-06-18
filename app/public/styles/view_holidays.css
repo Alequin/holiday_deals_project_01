@@ -1,0 +1,20 @@
+#view_holidays_main_container{
+  display: flex
+}
+
+#view_holidays_aside{
+  flex: 20;
+  height: 200px;
+}
+
+#view_holidays_aside label{
+  display: block;
+}
+
+#view_holidays_section{
+  flex: 80;
+  margin-left: 15px;
+  border-left: 1px solid #d68c04;
+  padding-left: 10px;
+  min-width: 650px;
+}

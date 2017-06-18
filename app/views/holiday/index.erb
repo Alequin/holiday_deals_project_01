@@ -1,0 +1,30 @@
+<div id="view_holidays_main_container">
+
+  <aside id="view_holidays_aside">
+    <h3>Sort by:</h3>
+    <form action="/hotel" method="get">
+      <label for="no-order">No Order
+        <input id="no-order" type="radio" name="sort" value="nil">
+      </label>
+      <label for="hotel-name">Price
+        <input id="hotel-name" type="radio" name="sort" value="cost_per_person">
+      </label>
+      <label for="hotel-name">Hotel Name
+        <input id="hotel-name" type="radio" name="sort" value="--">
+      </label>
+      <label for="city">Deals
+        <input id="city" type="radio" name="sort" value="--">
+      </label>
+      <label for="country">Nights
+        <input id="country" type="radio" name="sort" value="nights">
+      </label>
+      <input id="sort_submit" type="submit">
+    </form>
+  </aside>
+
+  <section id="view_holidays_section">
+    <% @holidays.each() do |holiday| %>
+
+    <% end %>
+  </section>
+</div>
