@@ -46,6 +46,28 @@ class TravelAgent < DatabaseAssistant
     super(get_table_hash)
   end
 
+  def get_holidays()
+    return Holiday.find({"travel_agent_id" => @id})
+  end
+
+  def get_hotels()
+    sql_command = "SELECT hotels.* FROM holidays
+      INNER JOIN hotels
+      ON holidays.hotel_id = hotels.id
+      WHERE holidays.travel_agent_id = #{@id}"
+    hotels = SqlRunner.run(sql_command)
+    return Hotel.map_sql_results(hotels)
+  end
+
+  def get_deals()
+    sql_command = "SELECT deals.* FROM holidays
+      INNER JOIN deals
+      ON holidays.id = deals.holiday_id
+      WHERE holidays.travel_agent_id = #{@id}"
+    deals = SqlRunner.run(sql_command)
+    return Deal.map_sql_results(deals)
+  end
+
   private
 
   def get_table_hash()

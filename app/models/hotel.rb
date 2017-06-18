@@ -15,7 +15,7 @@ class Hotel < DatabaseAssistant
     @name = options["name"]
     @description = options["description"]
     @stars = options["stars"].to_i
-    @image_url = options["logo_url"]
+    @image_url = options["image_url"]
   end
 
   def Hotel.get_all()
