@@ -20,8 +20,8 @@ class Deal < DatabaseAssistant
     set_end_date(options["end_date"])
   end
 
-  def Deal.get_all()
-    result = DatabaseAssistant.get_all(@@TABLE_NAME)
+  def Deal.get_all(sort_by = nil, order = nil)
+    result = DatabaseAssistant.get_all(@@TABLE_NAME, sort_by, order)
     return Deal.map_sql_results(result)
   end
 

@@ -17,8 +17,8 @@ class Holiday < DatabaseAssistant
     @nights = options["nights"].to_i
   end
 
-  def Holiday.get_all()
-    result = DatabaseAssistant.get_all(@@TABLE_NAME)
+  def Holiday.get_all(sort_by = nil, order = nil)
+    result = DatabaseAssistant.get_all(@@TABLE_NAME, sort_by, order)
     return Holiday.map_sql_results(result)
   end
 

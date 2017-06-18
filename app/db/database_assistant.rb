@@ -4,8 +4,11 @@ class DatabaseAssistant
 
   attr_reader :id
 
-  def DatabaseAssistant.get_all(table_name)
+  def DatabaseAssistant.get_all(table_name, sort_by = nil, order = nil)
     sql_command = "SELECT * FROM #{table_name}"
+    if(sort_by && order)
+      sql_command += " ORDER BY #{sort_by} #{order}"
+    end
     results = SqlRunner.run(sql_command)
     return results
   end

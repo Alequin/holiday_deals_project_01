@@ -14,8 +14,8 @@ class TravelAgent < DatabaseAssistant
     @logo_url = options["logo_url"]
   end
 
-  def TravelAgent.get_all()
-    result = DatabaseAssistant.get_all(@@TABLE_NAME)
+  def TravelAgent.get_all(sort_by = nil, order = nil)
+    result = DatabaseAssistant.get_all(@@TABLE_NAME, sort_by, order)
     return TravelAgent.map_sql_results(result)
   end
 
