@@ -1,7 +1,27 @@
 <div id="view_hotels_main_container">
-  <aside id="view_hotels_aside">
 
+  <aside id="view_hotels_aside">
+    <h3>Sort by:</h3>
+    <form action="/hotel" method="get">
+      <label for="no-order">No Order
+        <input id="no-order" type="radio" name="sort" value="nil">
+      </label>
+      <label for="hotel-name">Hotel Name
+        <input id="hotel-name" type="radio" name="sort" value="name">
+      </label>
+      <label for="hotel-name">Stars
+        <input id="hotel-name" type="radio" name="sort" value="stars">
+      </label>
+      <label for="city">City
+        <input id="city" type="radio" name="sort" value="city">
+      </label>
+      <label for="country">Country
+        <input id="country" type="radio" name="sort" value="country">
+      </label>
+      <input id="sort_submit" type="submit">
+    </form>
   </aside>
+
   <section id="view_hotels_section">
     <% @hotels.each() do |hotel| %>
       <article>

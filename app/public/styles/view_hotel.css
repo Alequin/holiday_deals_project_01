@@ -5,12 +5,24 @@
 #view_hotels_aside{
   flex: 20;
   height: 200px;
-  background: blue;
+}
+
+#view_hotels_aside label{
+  display: block;
+  margin-bottom: 7.5px;
+}
+
+#sort_submit{
+  display: block;
+  margin-top: 10px;
+  width: 150px;
 }
 
 #view_hotels_section{
   flex: 80;
   margin-left: 15px;
+  border-left: 1px solid #d68c04;
+  padding-left: 10px;
 }
 
 #view_hotels_section h2 img{
