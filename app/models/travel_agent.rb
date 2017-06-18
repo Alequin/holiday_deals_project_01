@@ -51,7 +51,7 @@ class TravelAgent < DatabaseAssistant
   end
 
   def get_hotels()
-    sql_command = "SELECT hotels.* FROM holidays
+    sql_command = "SELECT DISTINCT hotels.* FROM holidays
       INNER JOIN hotels
       ON holidays.hotel_id = hotels.id
       WHERE holidays.travel_agent_id = #{@id}"
