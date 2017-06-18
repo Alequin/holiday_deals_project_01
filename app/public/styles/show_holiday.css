@@ -29,6 +29,10 @@
   min-width: 650px;
 }
 
+#show_holidays_section h2, #show_holidays_section h3{
+  text-align: center;
+}
+
 #show_holidays_section section{
   display: flex;
   margin-bottom: 20px;
@@ -39,11 +43,11 @@
   text-align: center;
 }
 
-#show_holidays_section img{
+#show_holiday_hotel_img{
   width: 95%;
 }
 
-#details_container img{
-  width: 50px;
-  height: 50px;
+#show_holidy_agent_logo{
+  width: 40px;
+  height: 40px;
 }

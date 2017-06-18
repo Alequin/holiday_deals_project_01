@@ -19,25 +19,18 @@
   </aside>
 
   <section id="show_holidays_section">
-
+      <h2><%= hotel.name %></h2>
+      <h3>City - Country</h3>
       <section>
         <div>
-          <img class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'">
+          <img id="show_holiday_hotel_img" class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'">
         </div>
         <div>
-          <h2><%= hotel.name %></h2>
-          <h3>City - Country</h3>
-          <section id="details_container">
-            <div>
-              <p>Provided By</p>
-              <img src="<%= agent.logo_url %>" alt="">
-              <p><%= agent.name %></p>
-            </div>
-            <div>
-              <p class="medium_text">£<%= cost %> per night</p>
-              <p class="medium_text">Number of Nights: <%= @holiday.nights %></p>
-            </div>
-          </section>
+          <p class="medium_text">£<%= cost %> per night</p>
+          <p class="medium_text">Number of Nights: <%= @holiday.nights %></p>
+          <p>Provided By</p>
+          <img id="show_holidy_agent_logo" src="<%= agent.logo_url %>" alt="">
+          <p><%= agent.name %></p>
         </div>
       </section>
   </section>
