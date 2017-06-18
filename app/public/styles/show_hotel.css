@@ -2,7 +2,11 @@
   text-align: center;
 }
 
-#show_hotel_container img{
+#show_hotel_stars section{
+  margin: auto;
+}
+
+#hotel_description img{
   float: right;
   width: 300px;
   height: 300px;

@@ -26,16 +26,11 @@
   min-width: 650px;
 }
 
-#view_hotels_section h2 img{
-  width: 30px;
-  height: 30px;
-}
-
 #view_hotels_section article{
 clear: right;
 }
 
-#view_hotels_section img{
+#view_hotels_section p img{
   width: 300px;
   height: 300px;
   float: right;
@@ -49,4 +44,8 @@ clear: right;
 .show_holiday_link{
   text-align: right;
   clear: both;
+}
+
+.view_hotel_star_img{
+  float: right;
 }
