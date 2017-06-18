@@ -39,7 +39,7 @@
           <img src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s picture">
           <%= hotel.description %>
         </p>
-        <p class="show_holiday_link"><a href="#">View Holidays at <%= hotel.name %></a></p>
+        <p class="show_holiday_link"><a href="/hotel/<%= hotel.id %>">View Holidays at <%= hotel.name %></a></p>
       </article>
       <hr>
     <% end %>
