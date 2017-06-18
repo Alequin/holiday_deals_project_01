@@ -3,23 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Holiday Tracker</title>
+    <link rel="stylesheet" href="styles/master.css" type="text/css">
+    <link rel="stylesheet" href="styles/nav_bar.css" type="text/css">
   </head>
   <body>
     <nav>
-      <div>
+      <div class="page_width">
+        <img class="main_logo" src="/images/icon.png" alt="Wiki travel logo">
         <h1>Wiki Travel</h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">Holidays</a></li>
+          <li><a href="#">Cities</a></li>
+          <li><a href="#">Countries</a></li>
+          <li><a href="#">Travel Agents</a></li>
+          <li><a href="#">Add To Site</a></li>
+        </ul>
       </div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Deals</a></li>
-        <li><a href="#">Holidays</a></li>
-        <li><a href="#">Cities</a></li>
-        <li><a href="#">Countries</a></li>
-        <li><a href="#">Travel Agents</a></li>
-        <li><a href="#">Add To Site</a></li>
-      </ul>
+      <hr class="page_width">
     </nav>
-    <hr>
     <%= yield %>
   </body>
 </html>
