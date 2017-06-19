@@ -35,7 +35,7 @@ def make_travel_agents()
     "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " +
     "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa " +
     "qui officia deserunt mollit anim id est laborum.",
-    "logo_url" => "https://publicdomainvectors.org/photos/johnny_automatic_lobster.png"
+    "logo_url" => "/images/lobster_logo.webp"
   })
 
   agents[2] = TravelAgent.new({
@@ -50,7 +50,7 @@ def make_travel_agents()
     "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " +
     "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa " +
     "qui officia deserunt mollit anim id est laborum.",
-    "logo_url" => "https://publicdomainvectors.org/photos/shokunin_businessman_on_phone.png"
+    "logo_url" => "/images/all_star_logo.webp"
   })
 
   agents[3] = TravelAgent.new({
@@ -66,7 +66,7 @@ def make_travel_agents()
     "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " +
     "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa " +
     "qui officia deserunt mollit anim id est laborum.",
-    "logo_url" => "https://publicdomainvectors.org/photos/Gerald_G_KU_viola_glabella.png"
+    "logo_url" => "/images/poly_fresh_logo.webp"
   })
 
   return agents
