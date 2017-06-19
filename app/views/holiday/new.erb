@@ -1,6 +1,6 @@
 <section class="create_form_container rounded_border medium_text">
   <h2><%= @form_name %></h2>
-  <form action="index.html" method="post">
+  <form action="/holiday" method="post">
     <label for="hotel-name">Hotel</label>
     <select id="hotel-name" class="" name="hotel_id">
       <% @hotels.each() do |hotel| %>

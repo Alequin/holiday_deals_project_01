@@ -23,3 +23,9 @@ get('/holiday/:id') do
   @holiday = Holiday.find_by_id(params["id"])
   erb(:"holiday/show")
 end
+
+post('/holiday') do
+  @holiday = Holiday.new(params)
+  @holiday.save()
+  erb(:"holiday/show")
+end

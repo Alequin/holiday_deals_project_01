@@ -19,14 +19,11 @@
   border: 1px solid grey;
 }
 
-.create_form_container input[type=text]{
-  height: 30px;
-}
-
 .create_form_container input[type=text],
-.create_form_container input[type=submit],
+.create_form_container input[type=number],
 .create_form_container textarea{
   width: 100%;
+  height: 30px;
 }
 
 .create_form_container input:focus,
@@ -36,7 +33,8 @@
   border: 1px solid #d68c04;
 }
 
-.add_to_form_submit{
+.create_form_container input[type=submit]{
+  width: 100%;
   margin-top: 20px;
   padding: 10px;
 }
