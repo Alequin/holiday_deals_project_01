@@ -16,7 +16,8 @@ get('/holiday/new') do
   @form_name = "New Holiday"
   @hotels = Hotel.get_all()
   @travel_agents = TravelAgent.get_all()
-  erb(:"holiday/new")
+  @edit = false
+  erb(:"holiday/form")
 end
 
 get('/holiday/:id') do
@@ -25,9 +26,24 @@ get('/holiday/:id') do
   erb(:"holiday/show")
 end
 
+get('/holiday/:id/edit') do
+  @holiday = Holiday.find_by_id(params["id"])
+  @form_name = "Edit Holiday"
+  @hotels = Hotel.get_all()
+  @travel_agents = TravelAgent.get_all()
+  @edit = true
+  erb(:"holiday/form")
+end
+
 post('/holiday') do
   @holiday = Holiday.new(params)
   @holiday.save()
+  erb(:"holiday/show")
+end
+
+post('/holiday/:id') do
+  @holiday = Holiday.new(params)
+  @holiday.update()
   erb(:"holiday/show")
 end
 
