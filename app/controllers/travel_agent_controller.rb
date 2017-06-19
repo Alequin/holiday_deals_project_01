@@ -9,6 +9,11 @@ get('/travel_agent') do
   erb(:"travel_agent/index")
 end
 
+get('/travel_agent/new') do
+  @form_name = "New Travel Agent"
+  erb(:"travel_agent/new")
+end
+
 get('/travel_agent/:id') do
   @travel_agent = TravelAgent.find_by_id(params["id"])
   erb(:"travel_agent/show")
