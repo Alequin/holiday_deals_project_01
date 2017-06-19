@@ -10,7 +10,8 @@ get('/hotel') do
 end
 
 get('/hotel/new') do
-  erb(:"hotel/new")
+  @edit = false
+  erb(:"hotel/form")
 end
 
 get('/hotel/:id') do

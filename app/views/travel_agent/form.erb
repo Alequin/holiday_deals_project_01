@@ -1,6 +1,6 @@
 <section class="create_form_container rounded_border medium_text">
   <h2><%= @form_name %></h2>
-  <form action="/travel_agent" method="post">
+  <form action='<%= !@edit ? "/travel_agent" : "/travel_agent/#{@travel_agent.id}/update" %>' method="post">
     <label for="agent-name">Name</label>
     <input id="agent-name" type="text" name="name" value="<%= @travel_agent.name if(@edit) %>">
     <label for="agent-description">Description</label>
