@@ -14,13 +14,16 @@
   height: 250px;
 }
 
-#agent_offers_container h2{
+#agent_offers_container h2, #alter_agent_options{
   text-align: center;
+}
+
+#alter_agent_options{
+  font-size: 20px;
 }
 
 #options_container article{
   display: flex;
-  padding-top: 20px;
 }
 
 #options_container p{
