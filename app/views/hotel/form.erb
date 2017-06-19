@@ -5,12 +5,18 @@
     <input id="hotel-name" type="text" name="name" value="<%= @hotel.name if(@edit) %>">
 
     <label>Stars</label>
-    <input class="hotel-star-radio" type="radio" name="stars" value="1">1 Star</input>
-    <input class="hotel-star-radio" type="radio" name="stars" value="2">2 Stars</input>
-    <input class="hotel-star-radio" type="radio" name="stars" value="3">3 Stars</input>
-    <br>
-    <input class="hotel-star-radio" type="radio" name="stars" value="4">4 Stars</input>
-    <input class="hotel-star-radio" type="radio" name="stars" value="5">5 Stars</input>
+
+    <input class="hotel-star-radio" type="radio" name="stars" value="1" <%= "selected" if(@hotel.stars == 1) %>>1 Star</input>
+    <% (2..5).each() do |num| %>
+      <input
+        class="hotel-star-radio"
+        type="radio" name="stars"
+        value="<%= num %>"
+        <%= "checked" if(@hotel.stars == num) %>>
+          <%= num %> Star
+        </input>
+        <%= "<br>" if(num == 3) %>
+    <% end %>
 
     <label for="hotel-description">Description</label>
     <textarea id="hotel-description" name="description" rows="10"><%= @hotel.description if(@edit) %></textarea>
