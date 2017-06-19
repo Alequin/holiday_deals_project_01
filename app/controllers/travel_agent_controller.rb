@@ -11,13 +11,20 @@ end
 
 get('/travel_agent/new') do
   @form_name = "New Travel Agent"
-  erb(:"travel_agent/new")
+  @edit = false
+  erb(:"travel_agent/form")
 end
 
 get('/travel_agent/:id') do
   @travel_agent = TravelAgent.find_by_id(params["id"])
   @has_holidays = @travel_agent.get_holidays().length > 0
   erb(:"travel_agent/show")
+end
+
+get('/travel_agent/:id/edit') do
+  @travel_agent = TravelAgent.find_by_id(params["id"])
+  @edit = true
+  erb(:"travel_agent/form")
 end
 
 post('/travel_agent') do
