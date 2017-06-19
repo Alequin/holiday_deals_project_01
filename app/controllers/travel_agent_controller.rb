@@ -18,3 +18,9 @@ get('/travel_agent/:id') do
   @travel_agent = TravelAgent.find_by_id(params["id"])
   erb(:"travel_agent/show")
 end
+
+post('/travel_agent') do
+  @travel_agent = TravelAgent.new(params)
+  @travel_agent.save()
+  erb(:"travel_agent/show")
+end
