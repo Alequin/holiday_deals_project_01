@@ -4,9 +4,15 @@
   <h3>City   -   Country</h3>
   <section class="alter_options">
     <a class="alter_links" href="#">Edit</a>
-    <form action="index.html" method="post">
-      <input class="clear_submit_button_styles alter_links" type="submit" value="Delete">
-    </form>
+    <% if(!@has_holidays) %>
+      <form action="/hotel/<%= @hotel.id %>/delete" method='post'>
+        <input class="clear_submit_button_styles alter_links"
+          type="submit"
+          value="Delete">
+      </form>
+    <% else %>
+      <p class="alter_links">Cannot delete - Has holidays on offer</p>
+    <% end %>
   </section>
   <div id="show_hotel_stars">
     <section>
