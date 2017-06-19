@@ -74,3 +74,23 @@ footer{
   width: 30px;
   height: 30px;
 }
+
+.alter_options form{
+  margin-bottom: 20px;
+  display: inline;
+}
+
+.clear_submit_button_styles{
+  background: none;
+  border: none;
+}
+
+.alter_links{
+  display: inline;
+  height: 20px;
+  font-size: 15px;
+  color: blue;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+}

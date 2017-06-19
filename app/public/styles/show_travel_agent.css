@@ -22,11 +22,6 @@
   display: inline;
 }
 
-#agent_offers_container input{
-  background: none;
-  border: none;
-}
-
 #alter_agent_options{
   font-size: 20px;
 }

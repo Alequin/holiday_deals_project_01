@@ -52,7 +52,12 @@
   text-align: center;
 }
 
-#show_holidays_section section{
+#show_holidays_section h3{
+  margin-bottom: 5px;
+}
+
+
+#present_holiday_section{
   display: flex;
   margin-bottom: 20px;
 }

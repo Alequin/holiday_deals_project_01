@@ -35,7 +35,13 @@
   <section id="show_holidays_section">
       <h2><%= hotel.name %></h2>
       <h3>City - Country</h3>
-      <section>
+      <section class="alter_options">
+        <a class="alter_links" href="#">Edit</a>
+        <form action="index.html" method="post">
+          <input class="clear_submit_button_styles alter_links" type="submit" value="Delete">
+        </form>
+      </section>
+      <section id="present_holiday_section">
         <div>
           <img id="show_holiday_hotel_img" class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'">
         </div>
