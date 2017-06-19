@@ -19,11 +19,12 @@
   border: 1px solid grey;
 }
 
-.create_form_container input{
+.create_form_container input[type=text]{
   height: 30px;
 }
 
-.create_form_container input,
+.create_form_container input[type=text],
+.create_form_container input[type=submit],
 .create_form_container textarea{
   width: 100%;
 }
@@ -37,6 +38,5 @@
 
 .add_to_form_submit{
   margin-top: 20px;
-  padding-top: 10px;
-  padding-bottom: 30px;
+  padding: 10px;
 }

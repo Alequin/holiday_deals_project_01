@@ -9,6 +9,10 @@ get('/hotel') do
   erb(:"hotel/index")
 end
 
+get('/hotel/new') do
+  erb(:"hotel/new")
+end
+
 get('/hotel/:id') do
   @hotel = Hotel.find_by_id(params["id"])
   erb(:"hotel/show")
