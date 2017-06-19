@@ -1,5 +1,6 @@
 require("sinatra")
 require("sinatra/contrib/all") if(development?())
+require("pry")
 
 require_relative("../models/deal.rb")
 
@@ -8,4 +9,20 @@ get("/deal") do
   @deals = Deal.get_all(sort_by, "ASC") if(sort_by && sort_by != "nil")
   @deals = Deal.get_all() if(!@deals)
   erb(:"deal/index")
+end
+
+get("/deal/new") do
+  erb(:"deal/new")
+end
+
+post("/holidays/:holiday_id/deal") do
+  deal = Deal.new(params)
+  deal.save()
+  redirect to("/holiday/#{params["holiday_id"]}")
+end
+
+post("/deal/:id/delete") do
+  deal = Deal.find_by_id(params["id"])
+  deal.delete()
+  redirect to("/holiday/#{deal.get_holiday().id}")
 end

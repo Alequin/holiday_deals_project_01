@@ -14,9 +14,22 @@
           <p class="small_text">£<%= deal_cost %> - <%= deal.percentage_off %>% off</p>
           <p class="small_text">From: <%= deal.get_start_date() %></p>
           <p class="small_text">Till: <%= deal.get_end_date() %></p>
+          <form action="/deal/<%= deal.id %>/delete" method="post">
+            <input type="submit" value="Delete this deal">
+          </form>
         </li>
       <% end %>
     </ul>
+    <h4>New Deal</h4>
+    <form action="/holidays/<%= @holiday.id %>/deal" method="post">
+      <label for="percentage_off_input">Percentage Off</label>
+      <input id="percentage_off_input" type="number" name="percentage_off" min="1" max="99">
+      <label for="start_date_input">Start Date</label>
+      <input id="start_date_input" type="date" name="start_date">
+      <label for="end_date_input">End Date</label>
+      <input id="end_date_input" type="date" name="end_date">
+      <input type="submit" value="Make Deal">
+    </form>
   </aside>
 
   <section id="show_holidays_section">

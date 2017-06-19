@@ -8,6 +8,25 @@
   height: 200px;
 }
 
+#show_holidays_aside h4{
+  margin: 0 0 15px 0;
+}
+
+#show_holidays_aside label{
+  display: block;
+}
+
+#show_holidays_aside input{
+  height: 20px;
+  font-size: 15px;
+}
+
+#show_holidays_aside input[type=submit]{
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 20px;
+}
+
 #show_holidays_aside ul{
   padding: 10px;
 }
