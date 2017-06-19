@@ -2,7 +2,12 @@
   <img src="<%= @travel_agent.logo_url %>" alt="<%= @travel_agent.name %>'s logo'">
   <div>
     <h2><%= @travel_agent.name %></h2>
-    <p id="alter_agent_options"><a href="#">Edit</a> - <a href="#">Delete</a></p>
+    <section id="alter_agent_options">
+      <a href="#">Edit</a> -
+      <form action="index.html" method="post">
+        <input type="submit" value="Delete">
+      </form>
+    </section>
     <div id="options_container">
       <article>
         <p class="orange_border_button"><a href="#">View Deals</a></p>
