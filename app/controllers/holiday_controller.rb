@@ -21,6 +21,7 @@ end
 
 get('/holiday/:id') do
   @holiday = Holiday.find_by_id(params["id"])
+  @has_deals = @holiday.get_deals().length > 0
   erb(:"holiday/show")
 end
 
@@ -28,4 +29,10 @@ post('/holiday') do
   @holiday = Holiday.new(params)
   @holiday.save()
   erb(:"holiday/show")
+end
+
+post('/holiday/:id/delete') do
+  @holiday = Holiday.new(params)
+  @holiday.delete()
+  redirect to("/holiday")
 end
