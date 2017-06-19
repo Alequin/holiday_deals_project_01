@@ -12,6 +12,17 @@ get('/holiday') do
   erb(:"holiday/index")
 end
 
+get('/travel_agent/:id/holiday') do
+  @holidays = Holiday.find({"travel_agent_id" => params["id"]})
+  erb(:"holiday/index")
+end
+
+get('/travel_agent/:id/hotel') do
+  agent = TravelAgent.find_by_id(params["id"])
+  @hotels = agent.get_hotels()
+  erb(:"hotel/index")
+end
+
 get('/holiday/new') do
   @form_name = "New Holiday"
   @hotels = Hotel.get_all()
