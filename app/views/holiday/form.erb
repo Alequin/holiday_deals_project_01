@@ -22,9 +22,9 @@
       <% end %>
     </select>
     <label for="holiday-cost">Cost per person (per night)</label>
-    <input id="holiday-cost" type="number" name="cost_per_person" min="1">
+    <input id="holiday-cost" type="number" name="cost_per_person" min="1" value="<%= @holiday.cost_per_person if(@edit) %>">
     <label for="holiday-nights">Number of Nights</label>
-    <input id="holiday-nights" type="number" name="nights" min="1" max="99">
+    <input id="holiday-nights" type="number" name="nights" min="1" max="99" value="<%= @holiday.nights if(@edit) %>">
     <input class="add_to_form_submit" type="submit" name="submit">
   </form>
 </section>
