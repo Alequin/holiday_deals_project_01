@@ -10,7 +10,8 @@ get('/hotel') do
 end
 
 get('/hotel/new') do
-  erb(:"hotel/new")
+  @edit = false
+  erb(:"hotel/form")
 end
 
 get('/hotel/:id') do
@@ -23,6 +24,12 @@ post('/hotel') do
   @hotel = Hotel.new(params)
   @hotel.save()
   erb(:"hotel/show")
+end
+
+post('/hotel/:id') do
+  @hotel = Hotel.new(params)
+  @hotel.update()
+  redirect to("/hotel/#{@hotel.id}")
 end
 
 post('/hotel/:id/delete') do

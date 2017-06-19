@@ -38,3 +38,9 @@ post('/travel_agent/:id/delete') do
   @travel_agent.delete()
   redirect to("/travel_agent")
 end
+
+post('/travel_agent/:id') do
+  @travel_agent = TravelAgent.new(params)
+  @travel_agent.update()
+  redirect to("/travel_agent/#{@travel_agent.id}")
+end

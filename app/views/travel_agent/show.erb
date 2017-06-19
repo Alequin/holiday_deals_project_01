@@ -5,7 +5,7 @@
     <section class="alter_options">
       <a class="alter_links" href="/travel_agent/<%= @travel_agent.id %>/edit">Edit</a>
       <% if(!@has_holidays) %>
-        <form action='/travel_agent/#{@travel_agent.id}/delete' method='post'>
+        <form action='/travel_agent/<%= @travel_agent.id %>/delete' method='post'>
           <input class="clear_submit_button_styles alter_links"
             type="submit"
             value="'Delete">
