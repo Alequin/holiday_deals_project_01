@@ -75,6 +75,11 @@ footer{
   height: 30px;
 }
 
+.alter_options{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .alter_options form{
   margin-bottom: 20px;
   display: inline;
