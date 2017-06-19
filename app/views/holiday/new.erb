@@ -1,0 +1,22 @@
+<section class="create_form_container rounded_border medium_text">
+  <h2><%= @form_name %></h2>
+  <form action="index.html" method="post">
+    <label for="hotel-name">Hotel</label>
+    <select id="hotel-name" class="" name="hotel_id">
+      <% @hotels.each() do |hotel| %>
+        <option value="<%= hotel.id %>"><%= hotel.name %></option>
+      <% end %>
+    </select>
+    <label for="agent-name">Travel Agent</label>
+    <select id="agent-name" name="travel_agent_id">
+      <% @travel_agents.each() do |agent| %>
+        <option value="<%= agent.id %>"><%= agent.name %></option>
+      <% end %>
+    </select>
+    <label for="holiday-cost">Cost per person (per night)</label>
+    <input id="holiday-cost" type="number" name="cost_per_person" min="1">
+    <label for="holiday-nights">Number of Nights</label>
+    <input id="holiday-nights" type="number" name="nights" min="1" max="99">
+    <input class="add_to_form_submit" type="submit" name="submit">
+  </form>
+</section>

@@ -24,7 +24,7 @@ CREATE TABLE holidays(
   id SERIAL4 PRIMARY KEY,
   travel_agent_id INT4 REFERENCES travel_agents(id),
   hotel_id INT4 REFERENCES hotels(id),
-  cost_per_person FLOAT,
+  cost_per_person INT2,
   nights INT2
 );
 

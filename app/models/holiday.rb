@@ -13,7 +13,7 @@ class Holiday < DatabaseAssistant
     super(options["id"], @@TABLE_NAME)
     @travel_agent_id = options["travel_agent_id"]
     @hotel_id = options["hotel_id"]
-    @cost_per_person = options["cost_per_person"].to_f
+    @cost_per_person = options["cost_per_person"].to_i
     @nights = options["nights"].to_i
   end
 
