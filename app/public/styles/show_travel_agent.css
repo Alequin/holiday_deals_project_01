@@ -41,7 +41,7 @@
   min-width: 150px;
 }
 
-#options_row_two{
+#options_container article{
   width: 70%;
   margin: auto;
 }
