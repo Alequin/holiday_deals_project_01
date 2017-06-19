@@ -16,6 +16,7 @@ end
 
 get('/travel_agent/:id') do
   @travel_agent = TravelAgent.find_by_id(params["id"])
+  @has_holidays = @travel_agent.get_holidays().length > 0
   erb(:"travel_agent/show")
 end
 
@@ -23,4 +24,10 @@ post('/travel_agent') do
   @travel_agent = TravelAgent.new(params)
   @travel_agent.save()
   erb(:"travel_agent/show")
+end
+
+post('/travel_agent/:id/delete') do
+  @travel_agent = TravelAgent.new(params)
+  @travel_agent.delete()
+  redirect to("/travel_agent")
 end

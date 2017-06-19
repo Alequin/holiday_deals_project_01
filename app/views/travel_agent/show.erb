@@ -4,8 +4,12 @@
     <h2><%= @travel_agent.name %></h2>
     <section class="alter_options">
       <a class="alter_links" href="#">Edit</a>
-      <form action="index.html" method="post">
-        <input class="clear_submit_button_styles alter_links" type="submit" value="Delete">
+      <form <%= "action='/travel_agent/#{@travel_agent.id}/delete' method='post'" if(!@has_holidays) %> >
+        <input
+          class="clear_submit_button_styles alter_links"
+          type="submit"
+          value="<%= @has_holidays ? 'Cannot delete - Has holidays on offer' : 'Delete' %>"
+        >
       </form>
     </section>
     <div id="options_container">
