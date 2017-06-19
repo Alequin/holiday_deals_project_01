@@ -1,0 +1,22 @@
+#text_contribute_section{
+  padding: 5px 25px 25px 25px;
+  text-align: center;
+}
+
+#buttons_contribute_section{
+  padding: 5px 25px 25px 25px;
+  text-align: center;
+}
+
+#buttons_contribute_section h3{
+  margin-bottom: 35px;
+}
+
+#buttons_contribute_section div{
+  display: flex;
+}
+
+#buttons_contribute_section div p{
+  flex: 1;
+  margin: 0 35px 30px 35px;
+}
