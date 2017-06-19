@@ -20,6 +20,12 @@ get('/hotel/:id') do
   erb(:"hotel/show")
 end
 
+get('/hotel/:id/edit') do
+  @hotel = Hotel.find_by_id(params["id"])
+  @edit = true
+  erb(:"hotel/form")
+end
+
 post('/hotel') do
   @hotel = Hotel.new(params)
   @hotel.save()

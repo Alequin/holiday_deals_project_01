@@ -3,7 +3,7 @@
   <h2><%= @hotel.name %></h2>
   <h3>City   -   Country</h3>
   <section class="alter_options">
-    <a class="alter_links" href="#">Edit</a>
+    <a class="alter_links" href="/hotel/<%= @hotel.id %>/edit">Edit</a>
     <% if(!@has_holidays) %>
       <form action="/hotel/<%= @hotel.id %>/delete" method='post'>
         <input class="clear_submit_button_styles alter_links"

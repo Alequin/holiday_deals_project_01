@@ -1,8 +1,8 @@
 <section class="create_form_container rounded_border medium_text">
   <h2><%= @form_name %></h2>
-  <form action="/hotel" method="post">
+  <form action='<%= @edit ? "/hotel/#{@hotel.id}" : "/hotel" %>' method="post">
     <label for="hotel-name">Name</label>
-    <input id="hotel-name" type="text" name="name">
+    <input id="hotel-name" type="text" name="name" value="<%= @hotel.name if(@edit) %>">
 
     <label>Stars</label>
     <input class="hotel-star-radio" type="radio" name="stars" value="1">1 Star</input>
@@ -13,7 +13,7 @@
     <input class="hotel-star-radio" type="radio" name="stars" value="5">5 Stars</input>
 
     <label for="hotel-description">Description</label>
-    <textarea id="hotel-description" name="description" rows="10"></textarea>
+    <textarea id="hotel-description" name="description" rows="10"><%= @hotel.description if(@edit) %></textarea>
     <label for="city">City</label>
     <select id="city" name="city_id">
       <option value="">Not in use</option>
@@ -23,10 +23,10 @@
       <option value="">Not in use</option>
     </select>
     <label for="hotel-image-url">Image</label>
-    <input id="hotel-image-url" type="text" name="image_url">
+    <input id="hotel-image-url" type="text" name="image_url" value="<%= @hotel.image_url if(@edit) %>">
     <label for="services">Services (not in use)</label>
 
-    <input class="check_box" type="checkbox" name="wi-fi" value="1">Wi-fi</input>
+    <input class="check_box" type="checkbox" name="wi-fi" value="1">not in use</input>
     <input class="add_to_form_submit" type="submit" name="submit">
 
   </form>
