@@ -11,6 +11,12 @@ get("/deal") do
   erb(:"deal/index")
 end
 
+get("/travel_agent/:id/deal") do
+  agent = TravelAgent.find_by_id(params["id"])
+  @deals = agent.get_deals()
+  erb(:"deal/index")
+end
+
 get("/deal/new") do
   erb(:"deal/new")
 end
