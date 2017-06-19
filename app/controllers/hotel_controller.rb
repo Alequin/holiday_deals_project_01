@@ -17,3 +17,9 @@ get('/hotel/:id') do
   @hotel = Hotel.find_by_id(params["id"])
   erb(:"hotel/show")
 end
+
+post('/hotel') do
+  @hotel = Hotel.new(params)
+  @hotel.save()
+  erb(:"hotel/show")
+end

@@ -1,6 +1,6 @@
 <section class="create_form_container rounded_border medium_text">
   <h2><%= @form_name %></h2>
-  <form action="index.html" method="post">
+  <form action="/hotel" method="post">
     <label for="hotel-name">Name</label>
     <input id="hotel-name" type="text" name="name">
 
@@ -16,15 +16,15 @@
     <textarea id="hotel-description" name="description" rows="10"></textarea>
     <label for="city">City</label>
     <select id="city" name="city_id">
-      <!-- Put ruby here -->
+      <option value="">Not in use</option>
     </select>
     <label for="country">Country</label>
     <select id="country" name="city_id">
-      <!-- Put ruby here -->
+      <option value="">Not in use</option>
     </select>
     <label for="hotel-image-url">Image</label>
     <input id="hotel-image-url" type="text" name="image_url">
-    <label for="services">Services</label>
+    <label for="services">Services (not in use)</label>
 
     <input class="check_box" type="checkbox" name="wi-fi" value="1">Wi-fi</input>
     <input class="add_to_form_submit" type="submit" name="submit">
