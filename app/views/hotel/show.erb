@@ -2,6 +2,12 @@
 
   <h2><%= @hotel.name %></h2>
   <h3>City   -   Country</h3>
+  <section class="alter_options">
+    <a class="alter_links" href="#">Edit</a>
+    <form action="index.html" method="post">
+      <input class="clear_submit_button_styles alter_links" type="submit" value="Delete">
+    </form>
+  </section>
   <div id="show_hotel_stars">
     <section>
       <% @hotel.stars.times() do %>
