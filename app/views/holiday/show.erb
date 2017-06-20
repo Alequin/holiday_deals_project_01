@@ -32,39 +32,42 @@
   </aside>
 
   <section id="show_holidays_section">
-      <h2><%= hotel.name %></h2>
-      <h3>City - Country</h3>
-      <section class="alter_options">
-        <a class="alter_links" href="/holiday/<%= @holiday.id %>/edit">Edit</a>
-        <% if(!@has_deals) %>
-          <form action='/holiday/<%= @holiday.id %>/delete' method='post'>
-            <input class="clear_submit_button_styles alter_links"
-              type="submit"
-              value="Delete">
-          </form>
-        <% else %>
-          <p class="alter_links">Cannot delete - Has active deals</p>
-        <% end %>
-      </section>
-      <section id="present_holiday_section">
-        <div>
-          <img id="show_holiday_hotel_img" class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'">
-        </div>
-        <div>
-          <p class="medium_text">£<%= cost %> per night</p>
-          <p class="medium_text">Number of Nights: <%= @holiday.nights %></p>
-          <p>Provided By</p>
-          <img id="show_holidy_agent_logo" src="<%= agent.logo_url %>" alt="">
-          <p><%= agent.name %></p>
-        </div>
-      </section>
-      <article>
-        <h4>Hotel</h4>
-        <p class="small_text"><%= hotel.description %></p>
-        <h4>City</h4>
-        <p class="small_text">Details to come later</p>
-        <h4>Country</h4>
-        <p class="small_text">Details to come later</p>
-      </article>
+    <h2><%= hotel.name %></h2>
+    <h3>City - Country</h3>
+    <section class="alter_options">
+      <a class="alter_links" href="/holiday/<%= @holiday.id %>/edit">Edit</a>
+      <% if(!@has_deals) %>
+        <form action='/holiday/<%= @holiday.id %>/delete' method='post'>
+          <input class="clear_submit_button_styles alter_links"
+            type="submit"
+            value="Delete">
+        </form>
+      <% else %>
+        <p class="alter_links">Cannot delete - Has active deals</p>
+      <% end %>
+    </section>
+    <section id="present_holiday_section">
+      <div>
+        <img
+          id="show_holiday_hotel_img" class="rounded_border"
+          src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'"
+        >
+      </div>
+      <div>
+        <p class="medium_text">£<%= cost %> per night</p>
+        <p class="medium_text">Number of Nights: <%= @holiday.nights %></p>
+        <p>Provided By</p>
+        <img id="show_holidy_agent_logo" src="<%= agent.logo_url %>" alt="">
+        <p><%= agent.name %></p>
+      </div>
+    </section>
+    <article>
+      <h4>Hotel</h4>
+      <p class="small_text"><%= hotel.description %></p>
+      <h4>City</h4>
+      <p class="small_text">Details to come later</p>
+      <h4>Country</h4>
+      <p class="small_text">Details to come later</p>
+    </article>
   </section>
 </div>
