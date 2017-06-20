@@ -1,5 +1,11 @@
 <section class="create_form_container rounded_border medium_text">
-  <h2><%= @form_name %></h2>
+  <h2>
+    <% if(@edit) %>
+      <%= "Edit Hotel" %>
+    <% else %>
+      <%= "New Hotel" %>
+    <% end %>
+  </h2>
   <form action='<%= @edit ? "/hotel/#{@hotel.id}" : "/hotel" %>' method="post">
     <label for="hotel-name">Name</label>
     <input id="hotel-name" type="text" name="name" value="<%= @hotel.name if(@edit) %>">
