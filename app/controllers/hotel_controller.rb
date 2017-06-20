@@ -9,6 +9,12 @@ get('/hotel') do
   erb(:"hotel/index")
 end
 
+get('/travel_agent/:id/hotel') do
+  agent = TravelAgent.find_by_id(params["id"])
+  @hotels = agent.get_hotels()
+  erb(:"hotel/index")
+end
+
 get('/hotel/new') do
   @edit = false
   erb(:"hotel/form")
