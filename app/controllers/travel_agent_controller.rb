@@ -11,7 +11,6 @@ get('/travel_agent') do
 end
 
 get('/travel_agent/new') do
-  @form_name = "New Travel Agent"
   @edit = false
   erb(:"travel_agent/form")
 end
