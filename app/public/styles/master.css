@@ -27,12 +27,13 @@ hr{
 
 .small_text{
   font-size: 16px;
-  line-height: 25px;
-  color: #4d4f51;
 }
 
 .medium_text{
   font-size: 20px;
+}
+
+.small_text, .medium_text{
   line-height: 25px;
   color: #4d4f51;
 }
