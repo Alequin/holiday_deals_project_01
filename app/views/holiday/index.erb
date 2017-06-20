@@ -26,8 +26,7 @@
   <section id="view_holidays_section">
     <% @holidays.each() do |holiday| %>
     <% hotel = holiday.get_hotel() %>
-    <% deals = holiday.get_deals() %>
-    <% deals = deals.sort() {|deal1, deal2| deal2.percentage_off <=> deal1.percentage_off } %>
+    <% deals = (holiday.get_deals()).sort() {|deal1, deal2| deal2.percentage_off <=> deal1.percentage_off }  %>
     <% deal = deals.find() {|deal| deal.active?()} %>
     <% cost = deal ? deal.calc_cost_after_deal_applied(holiday.cost_per_person) : holiday.cost_per_person  %>
       <section>
@@ -37,7 +36,9 @@
         <div>
           <h2><%= hotel.name %></h2>
           <h3>City - Country</h3>
-          <p class="medium_text">£<%= cost %> per night<br><%= deal ? "Deal: #{deal.percentage_off}% off" : "No Active Deals" %></p>
+          <p class="medium_text">
+            £<%= cost %> per night<br><%= deal ? "Deal: #{deal.percentage_off}% off" : "No Active Deals" %>
+          </p>
           <p class="medium_text"></p>
           <p class="medium_text">Number of Nights: <%= holiday.nights %></p>
         </div>
