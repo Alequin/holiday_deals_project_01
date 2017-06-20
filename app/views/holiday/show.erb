@@ -1,7 +1,6 @@
 <% hotel = @holiday.get_hotel() %>
 <% agent = @holiday.get_travel_agent() %>
-<% deals = @holiday.get_deals() %>
-<% deals = deals.sort() {|deal1, deal2| deal2.percentage_off <=> deal1.percentage_off } %>
+<% deals = (@holiday.get_deals()).sort() {|deal1, deal2| deal1.get_start_date <=> deal2.get_start_date } %>
 <% cost = @holiday.cost_per_person %>
 
 <div id="show_holidays_main_container">
