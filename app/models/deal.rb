@@ -85,8 +85,8 @@ class Deal < DatabaseAssistant
     @end_date = @start_date if(@end_date < @start_date)
   end
 
-  def active?(current_date = Date.today())
-    return !(current_date < @start_date || current_date > @end_date)
+  def active?(date_to_comapre = Date.today())
+    return (date_to_comapre > @start_date && date_to_comapre < @end_date)
   end
 
   def calc_cost_after_deal_applied(cost)
