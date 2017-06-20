@@ -39,7 +39,7 @@
            <p>Number of Nights: <%= holiday.nights %></p>
            <p>
              <span <%= "class='orange_text'" if(deal.active?()) %>>Available:</span>
-             <%= deal.get_start_date() %> - <%= deal.get_end_date() %>
+             <%= deal.get_formatted_start_date() %> - <%= deal.get_formatted_end_date() %>
            </p>
          </span>
         </div>

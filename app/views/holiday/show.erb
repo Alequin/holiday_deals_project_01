@@ -1,6 +1,6 @@
 <% hotel = @holiday.get_hotel() %>
 <% agent = @holiday.get_travel_agent() %>
-<% deals = (@holiday.get_deals()).sort() {|deal1, deal2| deal1.get_start_date <=> deal2.get_start_date } %>
+<% deals = (@holiday.get_deals()).sort() {|deal1, deal2| deal1.get_formatted_start_date() <=> deal2.get_formatted_start_date() } %>
 <% cost = @holiday.cost_per_person %>
 
 <div class="aside_layout_main_container">
@@ -11,8 +11,8 @@
         <li>
           <% deal_cost = deal.calc_cost_after_deal_applied(@holiday.cost_per_person) %>
           <p class="small_text">£<%= deal_cost %> - <%= deal.percentage_off %>% off</p>
-          <p class="small_text">From: <%= deal.get_start_date() %></p>
-          <p class="small_text">Till: <%= deal.get_end_date() %></p>
+          <p class="small_text">From: <%= deal.get_formatted_start_date() %></p>
+          <p class="small_text">Till: <%= deal.get_formatted_end_date() %></p>
           <form action="/deal/<%= deal.id %>/delete" method="post">
             <input type="submit" value="Delete this deal">
           </form>

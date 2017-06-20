@@ -86,11 +86,11 @@ class Deal < DatabaseAssistant
     super(get_table_hash)
   end
 
-  def get_start_date()
+  def get_formatted_start_date()
     return format_date(@start_date)
   end
 
-  def get_end_date()
+  def get_formatted_end_date()
     return format_date(@end_date)
   end
 
