@@ -81,7 +81,7 @@ class Deal < DatabaseAssistant
   end
 
   def set_end_date(date)
-    @end_date = init_date_from_string(date)
+    @end_date = Date.parse(date)
     @end_date = @start_date if(@end_date < @start_date)
   end
 
@@ -104,16 +104,6 @@ class Deal < DatabaseAssistant
       "end_date" => @end_date.to_s
     }
     return data
-  end
-
-  def init_date_from_string(date)
-    split_date = date.split("-")
-    result = Date.new(
-      split_date[0].to_i,
-      split_date[1].to_i,
-      split_date[2].to_i
-    )
-    return result
   end
 
   def format_date(date)
