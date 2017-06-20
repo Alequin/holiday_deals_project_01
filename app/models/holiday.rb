@@ -39,6 +39,19 @@ class Holiday < DatabaseAssistant
     return result.map(){|holiday| Holiday.new(holiday)}
   end
 
+  def Holiday.sort(holidays, sort_by)
+    case sort_by
+    when :hotel_name
+      return sort_by_hotel_name(holidays)
+    end
+  end
+
+  def Holiday.sort_by_hotel_name(holidays)
+    return holidays.sort() {|holiday1, holiday2| holiday1.get_hotel.name <=> holiday2.get_hotel.name}
+  end
+
+  private_class_method :sort_by_hotel_name
+
   def save()
     super(get_table_hash)
   end
