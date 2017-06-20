@@ -1,4 +1,5 @@
 require("date")
+require("pry-byebug")
 
 require_relative("../db/sql_runner.rb")
 require_relative("../db/database_assistant.rb")
@@ -59,7 +60,16 @@ class Deal < DatabaseAssistant
   end
 
   def Deal.sort_by_active(deals)
-
+    active = []
+    not_active = []
+    deals.each() do |deal|
+      if(deal.active?())
+        active.push(deal)
+      else
+        not_active.push(deal)
+      end
+    end
+    return active + not_active
   end
 
   def Deal.sort_by_start_date(deals)
