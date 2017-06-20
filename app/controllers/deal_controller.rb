@@ -7,6 +7,7 @@ require_relative("../models/travel_agent.rb")
 require_relative("../models/hotel.rb")
 
 get("/deal") do
+  @page_title = "All Deals"
   sort_by = params["sort"]
   @deals = Deal.get_all(sort_by, "ASC") if(sort_by && sort_by != "nil")
   @deals = Deal.get_all() if(!@deals)
@@ -15,12 +16,14 @@ end
 
 get("/travel_agent/:id/deal") do
   agent = TravelAgent.find_by_id(params["id"])
+  @page_title = "Deal with #{agent.name}"
   @deals = agent.get_deals()
   erb(:"deal/index")
 end
 
 get("/hotel/:id/deal") do
   hotel = Hotel.find_by_id(params["id"])
+  @page_title = "Deal at #{hotel.name} "
   @deals = hotel.get_deals()
   erb(:"deal/index")
 end
