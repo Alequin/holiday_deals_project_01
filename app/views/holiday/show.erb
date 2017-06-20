@@ -3,8 +3,8 @@
 <% deals = (@holiday.get_deals()).sort() {|deal1, deal2| deal1.get_start_date <=> deal2.get_start_date } %>
 <% cost = @holiday.cost_per_person %>
 
-<div id="show_holidays_main_container">
-  <aside id="show_holidays_aside">
+<div id="show_holidays_main_container" class=".aside_layout_main_container">
+  <aside id="show_holidays_aside" class="aside_layout_left_section">
     <h3>Deals For This Holiday</h3>
     <ul>
       <% deals.each() do |deal| %>
@@ -31,7 +31,7 @@
     </form>
   </aside>
 
-  <section id="show_holidays_section">
+  <section id="show_holidays_section" class="aside_layout_right_section">
     <h2><%= hotel.name %></h2>
     <h3>City - Country</h3>
     <section class="alter_options">

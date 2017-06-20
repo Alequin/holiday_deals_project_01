@@ -1,5 +1,5 @@
 .aside_layout_main_container{
-  display: flex
+  display: flex;
 }
 
 .aside_layout_left_section{
@@ -16,6 +16,7 @@
   display: block;
   margin-top: 10px;
   width: 150px;
+  font-size: 20px;
 }
 
 .aside_layout_right_section{
