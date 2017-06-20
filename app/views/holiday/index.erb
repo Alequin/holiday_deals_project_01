@@ -1,6 +1,6 @@
-<div id="view_holidays_main_container">
+<div class="aside_layout_main_container">
 
-  <aside id="view_holidays_aside">
+  <aside id="view_holidays_aside" class="aside_layout_left_section">
     <h2><%= @page_title %></h2>
     <h3>Sort by:</h3>
     <form action="<%= @sort_by_path %>" method="get">
@@ -20,7 +20,7 @@
     </form>
   </aside>
 
-  <section id="view_holidays_section">
+  <section id="view_holidays_section" class="aside_layout_right_section">
     <% @holidays.each() do |holiday| %>
     <% hotel = holiday.get_hotel() %>
     <% deals = (holiday.get_deals()).sort() {|deal1, deal2| deal2.percentage_off <=> deal1.percentage_off }  %>
