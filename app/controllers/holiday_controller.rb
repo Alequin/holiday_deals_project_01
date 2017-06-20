@@ -28,7 +28,6 @@ get('/hotel/:id/holiday') do
 end
 
 get('/holiday/new') do
-  @form_name = "New Holiday"
   @hotels = Hotel.get_all()
   @travel_agents = TravelAgent.get_all()
   @edit = false
@@ -43,7 +42,6 @@ end
 
 get('/holiday/:id/edit') do
   @holiday = Holiday.find_by_id(params["id"])
-  @form_name = "Edit Holiday"
   @hotels = Hotel.get_all()
   @travel_agents = TravelAgent.get_all()
   @edit = true
