@@ -89,7 +89,7 @@ def make_hotels()
     "tavern you will be welcomed by horrific scents and aromas of what's " +
     "probably food, hopefully. Wooden beams support the upper floor and the " +
     "lanterns attached to them. The walls are loaded with pictures, though " +
-    "dust and cobwebs stops obscure them. The tavern itself is almost completely " +
+    "dust and cobwebs obscure them. The tavern itself is almost completely " +
     "abanonded. The few people inside you'd like to stay away from, but whoever " +
     "they are, you begin to fear for your safety, it's probably best to find a " +
     "different place.",
