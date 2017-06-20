@@ -3,6 +3,8 @@ require("sinatra/contrib/all") if(development?())
 require("pry")
 
 require_relative("../models/deal.rb")
+require_relative("../models/travel_agent.rb")
+require_relative("../models/hotel.rb")
 
 get("/deal") do
   sort_by = params["sort"]
@@ -14,6 +16,12 @@ end
 get("/travel_agent/:id/deal") do
   agent = TravelAgent.find_by_id(params["id"])
   @deals = agent.get_deals()
+  erb(:"deal/index")
+end
+
+get("/hotel/:id/deal") do
+  hotel = Hotel.find_by_id(params["id"])
+  @deals = hotel.get_deals()
   erb(:"deal/index")
 end
 

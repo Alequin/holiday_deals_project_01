@@ -22,8 +22,8 @@
     </section>
   </div>
   <div>
-    <p class="orange_border_button"><a href="#">View Deals</a></p>
-    <p class="orange_border_button"><a href="#">View Holidays</a></p>
+    <p class="orange_border_button"><a href="/hotel/<%= @hotel.id %>/deal">View Deals</a></p>
+    <p class="orange_border_button"><a href="/hotel/<%= @hotel.id %>/holiday">View Holidays</a></p>
   </div>
   <p id="hotel_description" class="medium_text">
     <img class="rounded_border" src="<%= @hotel.image_url %>" alt="<%= @hotel.name %>'s image'">
