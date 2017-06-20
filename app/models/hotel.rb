@@ -5,8 +5,8 @@ require_relative("holiday.rb")
 
 class Hotel < DatabaseAssistant
 
-  attr_reader :id
-  attr_accessor :name, :description, :stars, :image_url
+  attr_reader :id, :stars
+  attr_accessor :name, :description, :image_url
 
   @@TABLE_NAME = "hotels"
 
@@ -14,7 +14,7 @@ class Hotel < DatabaseAssistant
     super(options["id"], @@TABLE_NAME)
     @name = options["name"]
     @description = options["description"]
-    @stars = options["stars"].to_i
+    set_stars(options["stars"].to_i)
     @image_url = options["image_url"]
   end
 
@@ -48,6 +48,10 @@ class Hotel < DatabaseAssistant
 
   def update()
     super(get_table_hash)
+  end
+
+  def set_stars(amount)
+    @stars = amount if(amount > 0  && amount <= 5)
   end
 
   def get_holidays()

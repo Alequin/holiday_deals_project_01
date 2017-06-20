@@ -16,7 +16,7 @@ CREATE TABLE hotels(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
   description TEXT,
-  stars INT2,
+  stars INT2 CHECK(stars>0 AND stars<=5),
   image_url TEXT
 );
 
