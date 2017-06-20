@@ -3,18 +3,18 @@
   <aside id="view_deals_aside">
     <h2><%= @page_title %></h2>
     <h3>Sort by:</h3>
-    <form action="/deal" method="get">
+    <form action="<%= @sort_path %>" method="get">
       <label for="no-order">No Order
-        <input id="no-order" type="radio" name="sort" value="nil">
-      </label>
-      <label for="hotel-name">Price
-        <input id="hotel-name" type="radio" name="sort" value="cost_per_person">
+        <input id="no-order" type="radio" name="sort" value="no_order">
       </label>
       <label for="hotel-name">percentage off
         <input id="hotel-name" type="radio" name="sort" value="percentage_off">
       </label>
       <label for="city">Active Deals
-        <input id="city" type="radio" name="sort" value="--">
+        <input id="city" type="radio" name="sort" value="active">
+      </label>
+      <label for="hotel-name"> Start Dates
+        <input id="hotel-name" type="radio" name="sort" value="start_date">
       </label>
       <input id="sort_submit" type="submit">
     </form>

@@ -7,7 +7,7 @@ require_relative("holiday.rb")
 
 class Deal < DatabaseAssistant
 
-  attr_reader :id, :hotel_id, :percentage_off,
+  attr_reader :id, :hotel_id, :percentage_off, :start_date, :end_date
 
   @@TABLE_NAME = "deals"
 
@@ -42,6 +42,32 @@ class Deal < DatabaseAssistant
   def Deal.map_sql_results(result)
     return result.map(){|deal| Deal.new(deal)}
   end
+
+  def Deal.sort(deals, sort_by)
+    case sort_by
+    when :percentage_off
+      return sort_by_percentage_off(deals)
+    when :active
+      return sort_by_active(deals)
+    when :start_date
+      return sort_by_start_date(deals)
+    end
+  end
+
+  def Deal.sort_by_percentage_off(deals)
+    return deals.sort() {|deal1, deal2| deal2.percentage_off <=> deal1.percentage_off}
+  end
+
+  def Deal.sort_by_active(deals)
+
+  end
+
+  def Deal.sort_by_start_date(deals)
+    return deals.sort() {|deal1, deal2| deal1.start_date <=> deal2.start_date}
+  end
+
+  private_class_method :sort_by_percentage_off, :sort_by_active,
+    :sort_by_start_date
 
   def save()
     super(get_table_hash)
