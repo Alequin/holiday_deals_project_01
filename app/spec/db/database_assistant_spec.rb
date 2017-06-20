@@ -22,6 +22,21 @@ class TestDatabaseAssistant < MiniTest::Test
     assert_equal(expected, result)
   end
 
+  def test_prepare_columns_and_values()
+    to_insert = {
+      "name" => "Andrew",
+      "age" => 42,
+      "height" => 170,
+      "hair_colour" => "red"
+    }
+    result = @assistant.send(:prepare_columns_and_values, to_insert)
+    expected = {
+      columns: "name, age, height, hair_colour",
+      values: "$1, $2, $3, $4"
+    }
+    assert_equal(expected, result)
+  end
+
   def test_build_where_clause__1_value()
     values = {
       "id" => 50
