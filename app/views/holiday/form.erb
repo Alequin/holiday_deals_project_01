@@ -6,7 +6,7 @@
       <% @hotels.each() do |hotel| %>
         <option
           value="<%= hotel.id %>"
-          <%= "selected" if(@holiday.get_hotel().name == hotel.name && @edit) %>>
+          <%= "selected" if(@edit && @holiday.get_hotel().name == hotel.name) %>>
           <%= hotel.name %>
         </option>
       <% end %>
@@ -16,7 +16,7 @@
       <% @travel_agents.each() do |agent| %>
         <option
           value="<%= agent.id %>"
-          <%= "selected" if(@holiday.get_travel_agent().name == agent.name && @edit) %>>
+          <%= "selected" if(@edit && @holiday.get_travel_agent().name == agent.name) %>>
           <%= agent.name %>
         </option>
       <% end %>
