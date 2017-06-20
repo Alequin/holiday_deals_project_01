@@ -22,8 +22,8 @@
 
   <section id="view_deals_section">
     <% @deals.each() do |deal| %>
-    <% holiday = deal.get_holiday() %>
-    <% hotel = deal.get_hotel() %>
+      <% holiday = deal.get_holiday() %>
+      <% hotel = deal.get_hotel() %>
       <section>
         <div>
           <img class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'">
@@ -37,7 +37,10 @@
              - <%= deal.percentage_off %>% off
            </p>
            <p>Number of Nights: <%= holiday.nights %></p>
-           <p><span <%= "class='orange_text'" if(deal.active?()) %>>Available:</span> <%= deal.get_start_date() %> - <%= deal.get_end_date() %></p>
+           <p>
+             <span <%= "class='orange_text'" if(deal.active?()) %>>Available:</span>
+             <%= deal.get_start_date() %> - <%= deal.get_end_date() %>
+           </p>
          </span>
         </div>
       </section>
