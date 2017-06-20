@@ -5,6 +5,7 @@ require_relative("../models/hotel.rb")
 
 get('/hotel') do
   @page_title = "All Hotels"
+  @sort_by_link = '/hotel'
   @hotels = Hotel.get_all(params["sort"], "ASC") if(params["sort"] && params["sort"] != "nil")
   @hotels = Hotel.get_all() if(!@hotels)
   erb(:"hotel/index")
@@ -13,6 +14,7 @@ end
 get('/travel_agent/:id/hotel') do
   agent = TravelAgent.find_by_id(params["id"])
   @page_title = "Hotels associated with #{agent.name}"
+  @sort_by_link = "/travel_agent/#{params['id']}/hotel"
   @hotels = agent.get_hotels()
   erb(:"hotel/index")
 end

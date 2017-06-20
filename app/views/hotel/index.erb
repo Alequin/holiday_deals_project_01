@@ -3,7 +3,7 @@
   <aside id="view_hotels_aside">
     <h2><%= @page_title %></h2>
     <h3>Sort by:</h3>
-    <form action="/hotel" method="get">
+    <form action="<%= @sort_by_link %>" method="get">
       <label for="no-order">No Order
         <input id="no-order" type="radio" name="sort" value="nil">
       </label>
