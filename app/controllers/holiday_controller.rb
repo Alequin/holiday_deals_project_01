@@ -6,6 +6,7 @@ require_relative("../models/hotel.rb")
 require_relative("../models/travel_agent.rb")
 
 get('/holiday') do
+  @page_title = "All Holidays"
   sort_by = params["sort"]
   @holidays = Holiday.get_all(sort_by, "ASC") if(sort_by && sort_by != "nil")
   @holidays = Holiday.get_all() if(!@holidays)
@@ -13,12 +14,16 @@ get('/holiday') do
 end
 
 get('/travel_agent/:id/holiday') do
-  @holidays = Holiday.find({"travel_agent_id" => params["id"]})
+  agent = TravelAgent.find_by_id(params["id"])
+  @page_title = "Holidays from #{agent.name}"
+  @holidays = Holiday.find({"travel_agent_id" => agent.id})
   erb(:"holiday/index")
 end
 
 get('/hotel/:id/holiday') do
-  @holidays = Holiday.find({"hotel_id" => params["id"]})
+  hotel = Hotel.find_by_id(params["id"])
+  @page_title = "Holidays at #{hotel.name}"
+  @holidays = Holiday.find({"hotel_id" => hotel.id})
   erb(:"holiday/index")
 end
 
