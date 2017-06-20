@@ -60,16 +60,15 @@ class Deal < DatabaseAssistant
   end
 
   def Deal.sort_by_active(deals)
-    active = []
-    not_active = []
+    result = []
     deals.each() do |deal|
       if(deal.active?())
-        active.push(deal)
+        result.unshift(deal)
       else
-        not_active.push(deal)
+      result.push(deal)
       end
     end
-    return active + not_active
+    return result
   end
 
   def Deal.sort_by_start_date(deals)
