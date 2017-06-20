@@ -30,17 +30,17 @@ class TestDatabaseAssistant < MiniTest::Test
   def test_set_dates__correct_value()
     start_date_input = "2017-03-31"
     @deal.set_start_date(start_date_input)
-    assert_equal(start_date_input, @deal.start_date.to_s)
+    assert_equal("31/03/2017", @deal.get_start_date())
 
     end_date_input = "2018-01-01"
     @deal.set_end_date(end_date_input)
-    assert_equal(end_date_input, @deal.end_date.to_s)
+    assert_equal("01/01/2018", @deal.get_end_date())
   end
 
   def test_set_dates__incorrect_value()
     end_date_input = "2016-01-01"
     @deal.set_end_date(end_date_input)
-    assert_equal("2017-05-01", @deal.end_date.to_s)
+    assert_equal(@deal.get_start_date(), @deal.get_end_date())
   end
 
   def test_deal_active__true()

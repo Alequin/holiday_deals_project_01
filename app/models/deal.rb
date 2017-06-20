@@ -59,10 +59,6 @@ class Deal < DatabaseAssistant
     return format_date(@end_date)
   end
 
-  def get_end_dates()
-
-  end
-
   def get_holiday()
     return Holiday.find_by_id(@holiday_id)
   end
@@ -81,12 +77,12 @@ class Deal < DatabaseAssistant
   end
 
   def set_start_date(date)
-    @start_date = init_date_from_string(date)
+    @start_date = Date.parse(date)
   end
 
   def set_end_date(date)
-    end_date = init_date_from_string(date)
-    @end_date = end_date if(end_date > @start_date)
+    @end_date = init_date_from_string(date)
+    @end_date = @start_date if(@end_date < @start_date)
   end
 
   def active?(current_date = Date.today())
