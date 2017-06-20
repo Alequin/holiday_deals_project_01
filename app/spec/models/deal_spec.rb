@@ -3,7 +3,7 @@ require ("minitest/rg")
 require("date")
 require_relative ("../../models/deal.rb")
 
-class TestDatabaseAssistant < MiniTest::Test
+class TestDeal < MiniTest::Test
 
   def setup
     @deal = Deal.new({
