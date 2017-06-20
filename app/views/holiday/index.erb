@@ -3,15 +3,15 @@
   <aside id="view_holidays_aside">
     <h2><%= @page_title %></h2>
     <h3>Sort by:</h3>
-    <form action="/holiday" method="get">
+    <form action="<%= @sort_by_path %>" method="get">
       <label for="no-order">No Order
-        <input id="no-order" type="radio" name="sort" value="nil">
+        <input id="no-order" type="radio" name="sort" value="no_order">
       </label>
       <label for="hotel-name">Price
         <input id="hotel-name" type="radio" name="sort" value="cost_per_person">
       </label>
       <label for="hotel-name">Hotel Name
-        <input id="hotel-name" type="radio" name="sort" value="--">
+        <input id="hotel-name" type="radio" name="sort" value="hotel_name">
       </label>
       <label for="city">Deals
         <input id="city" type="radio" name="sort" value="--">
