@@ -10,9 +10,10 @@
     <label for="hotel-name">Hotel</label>
     <select id="hotel-name" class="" name="hotel_id">
       <% @hotels.each() do |hotel| %>
+        <% if_check_box = @edit && @holiday.get_hotel().name == hotel.name %>
         <option
           value="<%= hotel.id %>"
-          <%= "selected" if(@edit && @holiday.get_hotel().name == hotel.name) %>>
+          <%= "selected" if(if_check_box) %>>
           <%= hotel.name %>
         </option>
       <% end %>
