@@ -1,6 +1,6 @@
-<div id="view_hotels_main_container">
+<div id="view_hotels_main_container" class="aside_layout_main_container">
 
-  <aside id="view_hotels_aside">
+  <aside id="view_hotels_aside" class="aside_layout_left_section">
     <h2><%= @page_title %></h2>
     <h3>Sort by:</h3>
     <form action="<%= @sort_by_link %>" method="get">
@@ -23,7 +23,7 @@
     </form>
   </aside>
 
-  <section id="view_hotels_section">
+  <section id="view_hotels_section" class="aside_layout_right_section">
     <% @hotels.each() do |hotel| %>
       <article>
         <div>
