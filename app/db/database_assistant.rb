@@ -72,17 +72,21 @@ class DatabaseAssistant
   end
 
   def build_column_string(columns)
-    result = ""
-    columns.each() do |column|
-      result += "#{column}, "
-    end
-    return result[0..-3]
+    return build_query_peices(columns)
   end
 
   def build_placeholder_string(values)
-    result = ""
+    input = []
     (1..values.length).each() do |num|
-      result += "$#{num}, "
+      input.push("$#{num}")
+    end
+    return build_query_peices(input)
+  end
+
+  def build_query_peices(input)
+    result = ""
+    input.each() do |value|
+      result += "#{value}, "
     end
     return result[0..-3]
   end

@@ -22,6 +22,18 @@ class TestDatabaseAssistant < MiniTest::Test
     assert_equal(expected, result)
   end
 
+  def test_build_query_peices()
+    input1 = ["name", "age", "height", "hair_colour"]
+    result1 = @assistant.send(:build_query_peices, input1)
+    expected1 = "name, age, height, hair_colour"
+    assert_equal(expected1, result1)
+    
+    input2 = ["$1", "$2", "$3", "$4"]
+    result2 = @assistant.send(:build_query_peices, input2)
+    expected2 = "$1, $2, $3, $4"
+    assert_equal(expected2, result2)
+  end
+
   def test_prepare_columns_and_values()
     to_insert = {
       "name" => "Andrew",
@@ -58,5 +70,6 @@ class TestDatabaseAssistant < MiniTest::Test
     result = DatabaseAssistant.build_where_clause(values)
     assert_equal(expected, result)
   end
+
 
 end
