@@ -9,6 +9,13 @@
 
 #view_holidays_aside label{
   display: block;
+  margin-bottom: 7.5px;
+}
+
+#sort_submit{
+  display: block;
+  margin-top: 10px;
+  width: 150px;
 }
 
 #view_holidays_section{
