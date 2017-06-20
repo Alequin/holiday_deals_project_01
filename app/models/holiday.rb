@@ -1,7 +1,5 @@
 require_relative("../db/database_assistant.rb")
 
-require_relative("../db/database_assistant.rb")
-
 class Holiday < DatabaseAssistant
 
   attr_reader :id, :travel_agent_id, :hotel_id
