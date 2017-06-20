@@ -45,6 +45,8 @@ class Holiday < DatabaseAssistant
       return sort_by_hotel_name(holidays)
     when :cost_per_person
       return sort_by_cost_per_person(holidays)
+    when :nights
+      return sort_by_nights(holidays)
     end
   end
 
@@ -54,6 +56,10 @@ class Holiday < DatabaseAssistant
 
   def Holiday.sort_by_cost_per_person(holidays)
     return holidays.sort() {|holiday1, holiday2| holiday1.cost_per_person <=> holiday2.cost_per_person}
+  end
+
+  def Holiday.sort_by_nights(holidays)
+    return holidays.sort() {|holiday1, holiday2| holiday2.nights <=> holiday1.nights}
   end
 
   private_class_method :sort_by_hotel_name, :sort_by_cost_per_person
