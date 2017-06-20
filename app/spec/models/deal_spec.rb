@@ -53,4 +53,13 @@ class TestDatabaseAssistant < MiniTest::Test
     assert(!@deal.active?(date))
   end
 
+  def test_calc_cost_after_deal_applied()
+    cost = 100
+    cost_with_deal = @deal.calc_cost_after_deal_applied(cost)
+    assert_equal(50, cost_with_deal)
+    cost = 71
+    cost_with_deal = @deal.calc_cost_after_deal_applied(cost)
+    assert_equal(35, cost_with_deal)
+  end
+
 end

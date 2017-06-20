@@ -34,8 +34,8 @@ class Deal < DatabaseAssistant
     return Deal.new(result)
   end
 
-  def Deal.find(query)
-    results = DatabaseAssistant.find(@@TABLE_NAME, query)
+  def Deal.find(columns_and_values)
+    results = DatabaseAssistant.find(@@TABLE_NAME, columns_and_values)
     return Deal.map_sql_results(results)
   end
 
@@ -91,7 +91,7 @@ class Deal < DatabaseAssistant
 
   def calc_cost_after_deal_applied(cost)
     multiplier = ((100 - @percentage_off.to_f)/100)
-    return (cost*multiplier).round()
+    return (cost*multiplier).to_i
   end
 
   private
