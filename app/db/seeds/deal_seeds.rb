@@ -1,3 +1,4 @@
+require("date")
 require_relative("../../models/deal.rb")
 
 # Good images
@@ -12,16 +13,20 @@ def make_deals(holidays)
 
     holiday = holidays.sample
 
-    start_day = rand(1..28)
-    end_day = rand(1..28)
-    start_month = rand(1..11)
-    end_month = rand(start_month+1..12)
+    start_date = Date.new(
+      rand(2017..2020),
+      rand(1..11),
+      rand(1..28)
+    )
+
+    end_date = start_date.next_month(rand(1..5))
+    end_date = end_date.next_day(rand(1..20))
 
     deals[num] = Deal.new({
       "holiday_id" => holiday.id,
       "percentage_off" => rand(10..50),
-      "start_date" => "2017-#{start_month}-#{start_day}",
-      "end_date" => "2017-#{end_month}-#{end_day}"
+      "start_date" => start_date.to_s,
+      "end_date" => end_date.to_s
     })
   end
 
