@@ -9,21 +9,22 @@
   <form action="/holiday" method="post">
     <label for="hotel-name">Hotel</label>
     <select id="hotel-name" class="" name="hotel_id">
+      <%= current_hotel = @holiday.get_hotel() if(@edit) %>
       <% @hotels.each() do |hotel| %>
-        <% if_check_box = @edit && @holiday.get_hotel().name == hotel.name %>
         <option
           value="<%= hotel.id %>"
-          <%= "selected" if(if_check_box) %>>
+          <%= "selected" if(@edit && current_hotel.name == hotel.name) %>>
           <%= hotel.name %>
         </option>
       <% end %>
     </select>
     <label for="agent-name">Travel Agent</label>
     <select id="agent-name" name="travel_agent_id">
+      <%= current_agent = @holiday.get_travel_agent() if(@edit) %>
       <% @travel_agents.each() do |agent| %>
         <option
           value="<%= agent.id %>"
-          <%= "selected" if(@edit && @holiday.get_travel_agent().name == agent.name) %>>
+          <%= "selected" if(@edit && current_agent.name == agent.name) %>>
           <%= agent.name %>
         </option>
       <% end %>
