@@ -1,0 +1,27 @@
+.aside_layout_main_container{
+  display: flex
+}
+
+.aside_layout_left_section{
+  flex: 20;
+  height: 200px;
+}
+
+.aside_layout_left_section label{
+  display: block;
+  margin-bottom: 7.5px;
+}
+
+.aside_layout_left_section input[type=submit]{
+  display: block;
+  margin-top: 10px;
+  width: 150px;
+}
+
+.aside_layout_right_section{
+  flex: 80;
+  margin-left: 15px;
+  border-left: 1px solid #d68c04;
+  padding-left: 10px;
+  min-width: 650px;
+}

@@ -1,6 +1,6 @@
-<div id="view_deals_main_container">
+<div class="aside_layout_main_container">
 
-  <aside id="view_deals_aside">
+  <aside class="aside_layout_left_section">
     <h2><%= @page_title %></h2>
     <h3>Sort by:</h3>
     <form action="<%= @sort_path %>" method="get">
@@ -16,11 +16,11 @@
       <label for="hotel-name"> Start Dates
         <input id="hotel-name" type="radio" name="sort" value="start_date">
       </label>
-      <input id="sort_submit" type="submit">
+      <input type="submit">
     </form>
   </aside>
 
-  <section id="view_deals_section">
+  <section id="view_deals_section" class="aside_layout_right_section">
     <% @deals.each() do |deal| %>
       <% holiday = deal.get_holiday() %>
       <% hotel = deal.get_hotel() %>
