@@ -42,6 +42,25 @@ class Hotel < DatabaseAssistant
     return result.map(){|hotel| Hotel.new(hotel)}
   end
 
+  def Hotel.sort_hotels(hotels, sort_by)
+    case sort_by
+    when :name
+      return sort_hotels_by_name(hotels)
+    when :stars
+      return sort_hotels_by_stars(hotels)
+    end
+  end
+
+  def Hotel.sort_hotels_by_name(hotels)
+    return hotels.sort() {|hotel1, hotel2| hotel1.name <=> hotel2.name}
+  end
+
+  def Hotel.sort_hotels_by_stars(hotels)
+    return hotels.sort() {|hotel1, hotel2| hotel2.stars <=> hotel1.stars}
+  end
+
+  private_class_method :sort_hotels_by_name, :sort_hotels_by_stars
+
   def save()
     super(get_table_hash)
   end

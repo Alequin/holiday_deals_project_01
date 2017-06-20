@@ -8,7 +8,9 @@ get('/hotel') do
   @sort_by_link = '/hotel'
 
   @hotels = Hotel.get_all()
-  @hotels = sort_hotels(@hotels, params["sort"]) if(params["sort"] && params["sort"] != "no_sort")
+  if(params["sort"] && params["sort"] != "no_sort")
+    @hotels = Hotel.sort_hotels(@hotels, params["sort"].to_sym)
+  end
   erb(:"hotel/index")
 end
 
@@ -19,23 +21,6 @@ get('/travel_agent/:id/hotel') do
 
   @hotels = agent.get_hotels()
   erb(:"hotel/index")
-end
-
-def sort_hotels(hotels, sort_by)
-  case sort_by
-  when "name"
-    return sort_hotels_by_name(hotels)
-  when "stars"
-    return sort_hotels_by_stars(hotels)
-  end
-end
-
-def sort_hotels_by_name(hotels)
-  return hotels.sort() {|hotel1, hotel2| hotel1.name <=> hotel2.name}
-end
-
-def sort_hotels_by_stars(hotels)
-  return hotels.sort() {|hotel1, hotel2| hotel2.stars <=> hotel1.stars}
 end
 
 get('/hotel/new') do
