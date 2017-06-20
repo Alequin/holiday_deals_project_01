@@ -42,7 +42,7 @@ class Hotel < DatabaseAssistant
     return result.map(){|hotel| Hotel.new(hotel)}
   end
 
-  def Hotel.sort_hotels(hotels, sort_by)
+  def Hotel.sort(hotels, sort_by)
     case sort_by
     when :name
       return sort_hotels_by_name(hotels)

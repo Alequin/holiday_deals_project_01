@@ -9,7 +9,7 @@ get('/hotel') do
 
   @hotels = Hotel.get_all()
   if(params["sort"] && params["sort"] != "no_sort")
-    @hotels = Hotel.sort_hotels(@hotels, params["sort"].to_sym)
+    @hotels = Hotel.sort(@hotels, params["sort"].to_sym)
   end
   erb(:"hotel/index")
 end
