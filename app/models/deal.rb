@@ -67,7 +67,7 @@ class Deal < DatabaseAssistant
       if(deal.active?())
         result.unshift(deal)
       else
-      result.push(deal)
+        result.push(deal)
       end
     end
     return result
