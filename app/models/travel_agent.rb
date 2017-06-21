@@ -1,4 +1,5 @@
 require_relative("../db/database_assistant.rb")
+require_relative("../other/validator.rb")
 
 class TravelAgent < DatabaseAssistant
 
@@ -12,6 +13,7 @@ class TravelAgent < DatabaseAssistant
     @name = options["name"]
     @description = options["description"]
     @logo_url = options["logo_url"]
+    fill_empty_attributes()
   end
 
   def TravelAgent.get_all(sort_by = nil, order = nil)
@@ -82,5 +84,13 @@ class TravelAgent < DatabaseAssistant
     }
     return data
   end
+
+  def fill_empty_attributes()
+    @name = "no name" if(Validator.input_empty?(@name))
+    @description = "no description" if(Validator.input_empty?(@description))
+    @logo_url = "no image" if(Validator.input_empty?(@logo_url))
+  end
+
+
 
 end
