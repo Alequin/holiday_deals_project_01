@@ -6,6 +6,7 @@ require_relative("../models/holiday.rb")
 require_relative("../models/hotel.rb")
 require_relative("../models/travel_agent.rb")
 
+#INDEX
 get('/holiday') do
   @page_title = "All Holidays"
   @sort_by_path = "/holiday"
@@ -16,6 +17,7 @@ get('/holiday') do
   erb(:"holiday/index")
 end
 
+#INDEX FOR SPECIFIC TRAVEL AGENT
 get('/travel_agent/:id/holiday') do
   agent = TravelAgent.find_by_id(params["id"])
   @page_title = "Holidays from #{agent.name}"
@@ -27,6 +29,7 @@ get('/travel_agent/:id/holiday') do
   erb(:"holiday/index")
 end
 
+#INDEX FOR SPECIFIC HOTEL
 get('/hotel/:id/holiday') do
   hotel = Hotel.find_by_id(params["id"])
   @page_title = "Holidays at #{hotel.name}"
@@ -38,18 +41,21 @@ get('/hotel/:id/holiday') do
   erb(:"holiday/index")
 end
 
+#NEW
 get('/holiday/new') do
   @hotels = Hotel.get_all()
   @travel_agents = TravelAgent.get_all()
   erb(:"holiday/new")
 end
 
+#SHOW
 get('/holiday/:id') do
   @holiday = Holiday.find_by_id(params["id"])
   @has_deals = @holiday.get_deals().length > 0
   erb(:"holiday/show")
 end
 
+#EDIT
 get('/holiday/:id/edit') do
   @holiday = Holiday.find_by_id(params["id"])
   @hotels = Hotel.get_all()
@@ -57,12 +63,14 @@ get('/holiday/:id/edit') do
   erb(:"holiday/edit")
 end
 
+#CREATE
 post('/holiday') do
   @holiday = Holiday.new(params)
   @holiday.save()
   erb(:"holiday/show")
 end
 
+#UPDATE
 post('/holiday/:id') do
   @holiday = Holiday.new(params)
   @holiday.update()
@@ -75,6 +83,7 @@ post('/travel_agent/:travel_agent_id/holiday') do
   redirect("http://localhost:4567/travel_agent/#{params["travel_agent_id"]}/delete", 307)
 end
 
+#DELETE
 post('/holiday/:id/delete') do
   @holiday = Holiday.new(params)
   @holiday.delete()
