@@ -1,7 +1,6 @@
 require("sinatra")
 require("sinatra/contrib/all") if(development?())
 
-# require_relative("holiday_controller.rb")
 require_relative("../models/travel_agent.rb")
 
 
