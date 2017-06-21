@@ -15,4 +15,12 @@
     <input id="end_date_input" type="date" name="end_date" value="<%= @deal.end_date.to_s %>">
     <input type="submit" value="Submit">
   </form>
+  <hr>
+  <h4>Holiday Details</h4>
+    <div class="small_text">
+      <p>Travel Agent: <%= @holiday.get_travel_agent().name %> </p>
+      <p>Hotel: <%= @holiday.get_hotel().name %></p>
+      <p>Price without deal: £<%= @holiday.cost_per_person %></p>
+      <p>Nights: <%= @holiday.nights %></p>
+    </div>
 </section>
