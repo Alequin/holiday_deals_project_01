@@ -1,0 +1,18 @@
+<section class="create_form_container rounded_border medium_text">
+  <h2>Edit Deal</h2>
+  <form action="/holiday/<%= @holiday.id %>/deal/<%= @deal.id %>" method="post">
+    <label for="deal-percent-off">Percentage Off</label>
+    <input
+      id="deal-percent-off"
+      type="number"
+      name="percentage_off"
+      min="1" max="99"
+      value="<%= @deal.percentage_off %>"
+    >
+    <label for="start_date_input">Start Date</label>
+    <input id="start_date_input" type="date" name="start_date" value="<%= @deal.start_date.to_s %>">
+    <label for="end_date_input">End Date</label>
+    <input id="end_date_input" type="date" name="end_date" value="<%= @deal.end_date.to_s %>">
+    <input type="submit" value="Submit">
+  </form>
+</section>

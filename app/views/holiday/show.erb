@@ -13,11 +13,11 @@
           <p class="small_text">£<%= deal_cost %> - <%= deal.percentage_off %>% off</p>
           <p class="small_text">From: <%= deal.get_formatted_start_date() %></p>
           <p class="small_text">Till: <%= deal.get_formatted_end_date() %></p>
-          <form action="/deal/<%= deal.id %>" method="post">
-            <input type="submit" value="Delete this deal">
+          <form action="/holiday/<%= @holiday.id %>/deal/<%= deal.id %>/edit" method="get">
+            <input type="submit" value="Edit deal">
           </form>
           <form action="/deal/<%= deal.id %>/delete" method="post">
-            <input type="submit" value="Delete this deal">
+            <input type="submit" value="Delete deal">
           </form>
         </li>
       <% end %>

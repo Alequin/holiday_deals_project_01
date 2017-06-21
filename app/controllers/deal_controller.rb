@@ -2,6 +2,7 @@ require("sinatra")
 require("sinatra/contrib/all") if(development?())
 require("pry")
 
+require_relative("holiday_controller.rb")
 require_relative("../models/deal.rb")
 require_relative("../models/travel_agent.rb")
 require_relative("../models/hotel.rb")
@@ -38,14 +39,22 @@ get("/hotel/:id/deal") do
   erb(:"deal/index")
 end
 
-get("/deal/:id/edit") do
-
+get("/holiday/:holiday_id/deal/:id/edit") do
+  @holiday = Holiday.find_by_id(params["holiday_id"])
+  @deal = Deal.find_by_id(params["id"])
+  erb(:"deal/edit")
 end
 
 post("/holidays/:holiday_id/deal") do
   deal = Deal.new(params)
   deal.save()
   redirect to("/holiday/#{params["holiday_id"]}")
+end
+
+post("/holiday/:holiday_id/deal/:id") do
+  deal = Deal.new(params)
+  deal.update()
+  redirect to("/holiday/#{deal.holiday_id}")
 end
 
 post("/deal/:id/delete") do

@@ -8,7 +8,7 @@ require_relative("holiday.rb")
 
 class Deal < DatabaseAssistant
 
-  attr_reader :id, :hotel_id, :percentage_off, :start_date, :end_date
+  attr_reader :id, :holiday_id, :percentage_off, :start_date, :end_date
 
   @@TABLE_NAME = "deals"
 
