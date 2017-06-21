@@ -1,6 +1,7 @@
 require("sinatra")
 require("sinatra/contrib/all") if(development?())
 
+require_relative("travel_agent_controller.rb")
 require_relative("../models/holiday.rb")
 require_relative("../models/hotel.rb")
 require_relative("../models/travel_agent.rb")
@@ -70,7 +71,8 @@ end
 
 #MASS UPDATE HOLIDAY WITH NEW TRAVEL AGENTS
 post('/travel_agent/:travel_agent_id/holiday') do
-  redirect to("/travel_agent/#{params["travel_agent_id"]}/delete")
+  
+  redirect("http://localhost:4567/travel_agent/#{params["travel_agent_id"]}/delete", 307)
 end
 
 post('/holiday/:id/delete') do
