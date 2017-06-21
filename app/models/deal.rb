@@ -128,7 +128,8 @@ class Deal < DatabaseAssistant
 
   def calc_cost_after_deal_applied(cost)
     multiplier = ((100 - @percentage_off.to_f)/100)
-    return (cost*multiplier).to_i
+    result_cost = (cost*multiplier).to_i
+    return result_cost > 0 ? result_cost : 1
   end
 
   private
