@@ -12,7 +12,7 @@ end
 
 get('/travel_agent/new') do
   @edit = false
-  erb(:"travel_agent/form")
+  erb(:"travel_agent/new")
 end
 
 get('/travel_agent/:id') do
@@ -24,7 +24,7 @@ end
 get('/travel_agent/:id/edit') do
   @travel_agent = TravelAgent.find_by_id(params["id"])
   @edit = true
-  erb(:"travel_agent/form")
+  erb(:"travel_agent/edit")
 end
 
 post('/travel_agent') do

@@ -1,18 +1,7 @@
-<section class="create_form_container rounded_border medium_text">
-  <h2>
-    <% if(@edit) %>
-      <%= "Edit Travel Agent" %>
-    <% else %>
-      <%= "New Travel Agent" %>
-    <% end %>
-  </h2>
-  <form action='<%= !@edit ? "/travel_agent" : "/travel_agent/#{@travel_agent.id}" %>' method="post">
-    <label for="agent-name">Name</label>
-    <input id="agent-name" type="text" name="name" value="<%= @travel_agent.name if(@edit) %>">
-    <label for="agent-description">Description</label>
-    <textarea id="agent-description" name="description" rows="10" ><%= @travel_agent.description if(@edit) %></textarea>
-    <label for="agent-logo-url">Logo url</label>
-    <input id="agent-logo-url" type="text" name="logo_url" value="<%= @travel_agent.logo_url if(@edit) %>">
-    <input class="add_to_form_submit" type="submit" name="submit">
-  </form>
-</section>
+<label for="agent-name">Name</label>
+<input id="agent-name" type="text" name="name" value="<%= @travel_agent.name if(@edit) %>">
+<label for="agent-description">Description</label>
+<textarea id="agent-description" name="description" rows="10" ><%= @travel_agent.description if(@edit) %></textarea>
+<label for="agent-logo-url">Logo url</label>
+<input id="agent-logo-url" type="text" name="logo_url" value="<%= @travel_agent.logo_url if(@edit) %>">
+<input class="add_to_form_submit" type="submit" name="submit">
