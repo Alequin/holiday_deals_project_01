@@ -62,6 +62,12 @@ class Holiday < DatabaseAssistant
     return holidays.sort() {|holiday1, holiday2| holiday2.nights <=> holiday1.nights}
   end
 
+  def Holiday.update_travel_agent_id(old_agent_id, new_agent_id)
+    sql_command = "UPDATE holidays SET travel_agent_id = $1 WHERE travel_agent_id = $2"
+    values = [new_agent_id, old_agent_id]
+    SqlRunner.run(sql_command, values)
+  end
+
   private_class_method :sort_by_hotel_name, :sort_by_cost_per_person
 
   def save()

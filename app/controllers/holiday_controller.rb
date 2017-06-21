@@ -71,7 +71,7 @@ end
 
 #MASS UPDATE HOLIDAY WITH NEW TRAVEL AGENTS
 post('/travel_agent/:travel_agent_id/holiday') do
-  
+  Holiday.update_travel_agent_id(params["travel_agent_id"], params["new_travel_agent_id"])
   redirect("http://localhost:4567/travel_agent/#{params["travel_agent_id"]}/delete", 307)
 end
 
