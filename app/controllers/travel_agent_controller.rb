@@ -11,7 +11,6 @@ get('/travel_agent') do
 end
 
 get('/travel_agent/new') do
-  @edit = false
   erb(:"travel_agent/new")
 end
 
@@ -23,7 +22,6 @@ end
 
 get('/travel_agent/:id/edit') do
   @travel_agent = TravelAgent.find_by_id(params["id"])
-  @edit = true
   erb(:"travel_agent/edit")
 end
 

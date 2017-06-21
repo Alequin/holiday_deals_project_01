@@ -1,7 +1,7 @@
 <label for="agent-name">Name</label>
-<input id="agent-name" type="text" name="name" value="<%= @travel_agent.name if(@edit) %>">
+<input id="agent-name" type="text" name="name" value="<%= @travel_agent.name if(@travel_agent) %>">
 <label for="agent-description">Description</label>
-<textarea id="agent-description" name="description" rows="10" ><%= @travel_agent.description if(@edit) %></textarea>
+<textarea id="agent-description" name="description" rows="10" ><%= @travel_agent.description if(@travel_agent) %></textarea>
 <label for="agent-logo-url">Logo url</label>
-<input id="agent-logo-url" type="text" name="logo_url" value="<%= @travel_agent.logo_url if(@edit) %>">
+<input id="agent-logo-url" type="text" name="logo_url" value="<%= @travel_agent.logo_url if(@travel_agent) %>">
 <input class="add_to_form_submit" type="submit" name="submit">

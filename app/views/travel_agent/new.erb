@@ -1,11 +1,5 @@
 <section class="create_form_container rounded_border medium_text">
-  <h2>
-    <% if(@edit) %>
-      <%= "Edit Travel Agent" %>
-    <% else %>
-      <%= "New Travel Agent" %>
-    <% end %>
-  </h2>
+  <h2>New Travel Agent</h2>
   <form action='/travel_agent' method="post">
     <%= erb(:"travel_agent/form") %>
   </form>
