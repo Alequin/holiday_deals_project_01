@@ -1,11 +1,22 @@
-<section>
-  <p class="medium_text">
+<section class="pre_delete_paragraph medium_text">
+  <p>
     The travel agent <%= @travel_agent.name %> has
-    <%= @travel_agent.get_holiday_count() %> associated with them. In order
-    to delete this travel agent please select a new travel agent for these
-    holidays to be attached to.
+    <%= @travel_agent.get_holiday_count() %> holidays associated with them.
+  </p>
+  <p>
+    In order to delete this travel agent please select a new travel agent for
+    these holidays to be attached to.
   </p>
 </section>
-<section class="create_form_container">
-
+<section class="create_form_container rounded_border">
+  <h3>Select a Travel Agent</h3>
+  <form>
+    <select>
+      <% @all_agents.each() do |agent| %>
+        <% if(agent.name != @travel_agent.name) %>
+          <option value="<%= agent.id %>"><%= agent.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </form>
 </section>
