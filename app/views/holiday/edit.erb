@@ -1,7 +1,10 @@
 <section class="create_form_container rounded_border medium_text">
   <h2>Edit Holiday</h2>
   <form action="/holiday/<%= @holiday.id %>" method="post">
-    <% @edit = true %>
+    <% @hotel = @holiday.get_hotel() %>
+    <% @agent = @holiday.get_travel_agent() %>
+    <% @cost = @holiday.cost_per_person %>
+    <% @nights = @holiday.nights %>
     <%= erb(:"holiday/form_partial") %>
   </form>
 </section>
