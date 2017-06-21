@@ -27,7 +27,7 @@ class TestDatabaseAssistant < MiniTest::Test
     result1 = @assistant.send(:build_query_peices, input1)
     expected1 = "name, age, height, hair_colour"
     assert_equal(expected1, result1)
-    
+
     input2 = ["$1", "$2", "$3", "$4"]
     result2 = @assistant.send(:build_query_peices, input2)
     expected2 = "$1, $2, $3, $4"
@@ -70,6 +70,4 @@ class TestDatabaseAssistant < MiniTest::Test
     result = DatabaseAssistant.build_where_clause(values)
     assert_equal(expected, result)
   end
-
-
 end
