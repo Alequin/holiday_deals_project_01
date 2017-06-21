@@ -1,5 +1,7 @@
 <label for="hotel-name">Name</label>
-<input id="hotel-name" type="text" name="name" value="<%= @hotel.name if(@edit) %>">
+<input id="hotel-name" type="text" name="name"
+  value="<%= @hotel.name if(@hotel) %>"
+>
 
 <label>Stars</label>
 
@@ -8,14 +10,19 @@
     class="hotel-star-radio"
     type="radio" name="stars"
     value="<%= num %>"
-    <%= "checked" if(@edit && @hotel.stars == num) %>>
+    <%= "checked" if(@hotel && @hotel.stars == num) %>>
       <%= num %> Star<%= "s" if(num != 1) %>
     </input>
     <%= "<br>" if(num == 3) %>
 <% end %>
 
 <label for="hotel-description">Description</label>
-<textarea id="hotel-description" name="description" rows="10"><%= @hotel.description if(@edit) %></textarea>
+<textarea
+  id="hotel-description"
+  name="description"
+  rows="10"
+><%= @hotel.description if(@hotel) %>
+</textarea>
 <label for="city">City</label>
 <select id="city" name="city_id">
   <option value="">Not in use</option>
@@ -25,8 +32,12 @@
   <option value="">Not in use</option>
 </select>
 <label for="hotel-image-url">Image</label>
-<input id="hotel-image-url" type="text" name="image_url" value="<%= @hotel.image_url if(@edit) %>">
+<input id="hotel-image-url" type="text" name="image_url"
+  value="<%= @hotel.image_url if(@hotel) %>"
+>
 <label for="services">Services (not in use)</label>
 
-<input class="check_box" type="checkbox" name="wi-fi" value="1">not in use</input>
+<input class="check_box" type="checkbox" name="wi-fi" value="1">
+  not in use
+</input>
 <input class="add_to_form_submit" type="submit" name="submit">
