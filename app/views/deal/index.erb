@@ -26,7 +26,7 @@
       <% hotel = deal.get_hotel() %>
       <section>
         <div>
-          <img class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image'">
+          <img class="rounded_border" src="<%= hotel.image_url %>" alt="<%= hotel.name %>'s image">
         </div>
         <div>
           <h2><%= hotel.name %></h2>
@@ -42,6 +42,7 @@
              <%= deal.get_formatted_start_date() %> - <%= deal.get_formatted_end_date() %>
            </p>
          </span>
+         <a href="/holiday/<%= holiday.id %>">View Holiday</a>
         </div>
       </section>
       <hr>
