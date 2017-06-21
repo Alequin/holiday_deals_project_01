@@ -25,7 +25,7 @@ end
 
 get('/hotel/new') do
   @edit = false
-  erb(:"hotel/form")
+  erb(:"hotel/new")
 end
 
 get('/hotel/:id') do
@@ -37,7 +37,7 @@ end
 get('/hotel/:id/edit') do
   @hotel = Hotel.find_by_id(params["id"])
   @edit = true
-  erb(:"hotel/form")
+  erb(:"hotel/edit")
 end
 
 post('/hotel') do

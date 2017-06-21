@@ -1,0 +1,12 @@
+<section class="create_form_container rounded_border medium_text">
+  <h2>
+    <% if(@edit) %>
+      <%= "Edit Hotel" %>
+    <% else %>
+      <%= "New Hotel" %>
+    <% end %>
+  </h2>
+  <form action="/hotel/<%= @hotel.id %>" method="post">
+    <%= erb(:"hotel/form") %>
+  </form>
+</section>
