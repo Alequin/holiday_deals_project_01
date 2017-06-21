@@ -10,13 +10,14 @@
 </section>
 <section class="create_form_container rounded_border">
   <h3>Select a Travel Agent</h3>
-  <form>
+  <form action="/travel_agent/<%= @travel_agent.id %>/holiday" method="post">
     <select>
       <% @all_agents.each() do |agent| %>
         <% if(agent.name != @travel_agent.name) %>
-          <option value="<%= agent.id %>"><%= agent.name %></option>
+          <option value="<%= agent.id %>" name="new_travel_agent_id"><%= agent.name %></option>
         <% end %>
       <% end %>
     </select>
+    <input type="submit" name="Submit">
   </form>
 </section>

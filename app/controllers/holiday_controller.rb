@@ -68,6 +68,11 @@ post('/holiday/:id') do
   erb(:"holiday/show")
 end
 
+#MASS UPDATE HOLIDAY WITH NEW TRAVEL AGENTS
+post('/travel_agent/:travel_agent_id/holiday') do
+  redirect to("/travel_agent/#{params["travel_agent_id"]}/delete")
+end
+
 post('/holiday/:id/delete') do
   @holiday = Holiday.new(params)
   @holiday.delete()
