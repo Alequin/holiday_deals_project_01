@@ -1,3 +1,4 @@
+require_relative("../other/validator.rb")
 require_relative("../db/database_assistant.rb")
 
 class Holiday < DatabaseAssistant
@@ -8,6 +9,7 @@ class Holiday < DatabaseAssistant
   @@TABLE_NAME = "holidays"
 
   def initialize(options)
+    options = fill_empty_attributes(options)
     super(options["id"], @@TABLE_NAME)
     @travel_agent_id = options["travel_agent_id"]
     @hotel_id = options["hotel_id"]
@@ -108,6 +110,12 @@ class Holiday < DatabaseAssistant
       "nights" => @nights
     }
     return data
+  end
+
+  def fill_empty_attributes(options)
+    options["cost_per_person"] = 1 if(Validator.input_empty?(options["cost_per_person"]))
+    options["nights"] = 1 if(Validator.input_empty?(options["nights"]))
+    return options
   end
 
 end

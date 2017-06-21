@@ -9,11 +9,11 @@ class TravelAgent < DatabaseAssistant
   @@TABLE_NAME = "travel_agents"
 
   def initialize(options)
+    options = fill_empty_attributes(options)
     super(options["id"], @@TABLE_NAME)
     @name = options["name"]
     @description = options["description"]
     @logo_url = options["logo_url"]
-    fill_empty_attributes()
   end
 
   def TravelAgent.get_all(sort_by = nil, order = nil)
@@ -85,12 +85,10 @@ class TravelAgent < DatabaseAssistant
     return data
   end
 
-  def fill_empty_attributes()
-    @name = "no name" if(Validator.input_empty?(@name))
-    @description = "no description" if(Validator.input_empty?(@description))
-    @logo_url = "/images/goat-in-plane.jpg" if(Validator.input_empty?(@logo_url))
+  def fill_empty_attributes(options)
+    options["name"] = "no name" if(Validator.input_empty?(options["name"]))
+    options["description"] = "no description" if(Validator.input_empty?(options["description"]))
+    options["logo_url"] = "/images/goat-in-plane.jpg" if(Validator.input_empty?(options["logo_url"]))
+    return options
   end
-
-
-
 end

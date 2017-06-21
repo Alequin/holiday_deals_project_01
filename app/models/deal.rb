@@ -2,6 +2,7 @@ require("date")
 require("pry-byebug")
 
 require_relative("../db/sql_runner.rb")
+require_relative("../other/validator.rb")
 require_relative("../db/database_assistant.rb")
 require_relative("hotel.rb")
 require_relative("holiday.rb")
@@ -13,6 +14,7 @@ class Deal < DatabaseAssistant
   @@TABLE_NAME = "deals"
 
   def initialize(options)
+    options = fill_empty_attributes(options)
     super(options["id"], @@TABLE_NAME)
     @holiday_id= options["holiday_id"]
     @percentage_off = options["percentage_off"].to_i
@@ -144,6 +146,13 @@ class Deal < DatabaseAssistant
   def format_date(date)
     split_date = (date.to_s).split("-")
     return "#{split_date[2]}/#{split_date[1]}/#{split_date[0]}"
+  end
+
+  def fill_empty_attributes(options)
+    options["percentage_off"] = 1 if(Validator.input_empty?(options["percentage_off"]))
+    options["start_date"] = Date.today().to_s if(Validator.input_empty?(options["start_date"]))
+    options["end_date"] = Date.today().to_s if(Validator.input_empty?(options["end_date"]))
+    return options
   end
 
 end
