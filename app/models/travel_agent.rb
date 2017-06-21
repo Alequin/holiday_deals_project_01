@@ -50,6 +50,10 @@ class TravelAgent < DatabaseAssistant
     return Holiday.find({"travel_agent_id" => @id})
   end
 
+  def get_holiday_count()
+    return get_holidays().length
+  end
+
   def get_hotels()
     sql_command = "SELECT DISTINCT hotels.* FROM holidays
       INNER JOIN hotels
