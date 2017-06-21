@@ -1,0 +1,89 @@
+project description
+  - compare mine and the burger tracker
+
+Database diagrams
+  - show mvp diagram
+    - this is what i did
+    - had ideas but only completed the basic one
+  - show full diagram
+    - explain extra tables
+
+Class diagrams
+  - cycle through all images
+    - database assistant to make writing queries easier
+    - the four models
+
+Site map
+  - had a go at making a site map but got a bit lost
+  - it mostly resembles the outcome but there are a few differences
+
+wire frames
+  - show wire frames
+  - designs changed slightly but mostly the same
+
+Show App
+
+#general show around
+
+  - index travel agent page
+  - show travel agent page
+    - dont press buttons
+
+  - index hotel page
+  - show sorting of page items
+  - show hotel page
+    - dont press buttons
+
+  - index holiday page
+  - show sorting of page items
+  - show holiday page
+    - dont press buttons
+
+  - index deal page
+  - show sorting of page items
+  - show deal page
+    - dont press buttons
+
+  - show buttons in travel agent explaining with database in mind
+    - agent to holiday
+    - agent to hotel
+    - agent to deals
+
+#adding to site
+
+  - From deals go into a holiday
+  - show adding a deal
+
+  - show adding travel agent
+    - show with input
+    - name: Ace Travel
+    - Description: Its amazing come and see.
+    - image https://sites.google.com/a/d64.org/312survivalhandbook/_/rsrc/1385049719965/animals/racoon/raccoonYoung.jpg?height=240&width=320
+    - show without input
+
+  - show adding hotel
+  - name: Awesome hotel
+  - Description: Its that awesome really.
+  - racoon image
+  - show without input
+
+  - show adding holiday
+  - racoon image
+  - show without input
+    - if there were no hotels or travel agents would error with no input
+      fix this with a warning page if either agents of hotels count is equal
+      to 1
+
+#editing site
+
+  - deals
+  - hotel
+  - travel agent
+  - holiday
+
+# deleting
+
+  - delete deals
+  - delete holiday
+  - delete hotel
+  - delete agent
