@@ -88,7 +88,7 @@ class TravelAgent < DatabaseAssistant
   def fill_empty_attributes()
     @name = "no name" if(Validator.input_empty?(@name))
     @description = "no description" if(Validator.input_empty?(@description))
-    @logo_url = "no image" if(Validator.input_empty?(@logo_url))
+    @logo_url = "/images/goat-in-plane.jpg" if(Validator.input_empty?(@logo_url))
   end
 
 

@@ -40,7 +40,6 @@ end
 
 post('/hotel') do
   @hotel = Hotel.new(params)
-  @hotel.set_stars(1) if(!@hotel.stars)
   @hotel.save()
   erb(:"hotel/show")
 end
