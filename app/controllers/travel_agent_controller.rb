@@ -23,6 +23,8 @@ end
 
 #DELETE-SHOW
 get('/holiday/travel_agent/:id') do
+  @travel_agent = TravelAgent.find_by_id(params["id"])
+  @all_agents = TravelAgent.get_all()
   erb(:"travel_agent/pre_delete_show")
 end
 
