@@ -11,7 +11,7 @@
             value="Delete">
         </form>
       <% else %>
-        <p class="alter_links">Cannot delete - Has holidays on offer</p>
+        <p class="alter_links"><a href="/holiday/travel_agent/<%= @travel_agent.id %>">Delete</a></p>
       <% end %>
     </section>
     <div id="options_container">

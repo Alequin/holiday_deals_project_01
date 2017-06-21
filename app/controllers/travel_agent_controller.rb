@@ -21,7 +21,7 @@ get('/travel_agent/:id') do
   erb(:"travel_agent/show")
 end
 
-#SHOW
+#DELETE-SHOW
 get('/holiday/travel_agent/:id') do
   erb(:"travel_agent/pre_delete_show")
 end
