@@ -41,7 +41,7 @@ get('/holiday/new') do
   @hotels = Hotel.get_all()
   @travel_agents = TravelAgent.get_all()
   @edit = false
-  erb(:"holiday/form")
+  erb(:"holiday/new")
 end
 
 get('/holiday/:id') do
@@ -55,7 +55,7 @@ get('/holiday/:id/edit') do
   @hotels = Hotel.get_all()
   @travel_agents = TravelAgent.get_all()
   @edit = true
-  erb(:"holiday/form")
+  erb(:"holiday/edit")
 end
 
 post('/holiday') do

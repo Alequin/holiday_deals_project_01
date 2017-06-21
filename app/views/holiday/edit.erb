@@ -1,0 +1,12 @@
+<section class="create_form_container rounded_border medium_text">
+  <h2>
+    <% if(@edit) %>
+      <%= "Edit Holiday" %>
+    <% else %>
+      <%= "New Holiday" %>
+    <% end %>
+  </h2>
+  <form action="/holiday/<%= @holiday.id %>/edit" method="post">
+    <%= erb(:"holiday/form_partial") %>
+  </form>
+</section>
