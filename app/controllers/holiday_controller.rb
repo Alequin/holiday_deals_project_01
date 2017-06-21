@@ -40,7 +40,6 @@ end
 get('/holiday/new') do
   @hotels = Hotel.get_all()
   @travel_agents = TravelAgent.get_all()
-  @edit = false
   erb(:"holiday/new")
 end
 
@@ -54,7 +53,6 @@ get('/holiday/:id/edit') do
   @holiday = Holiday.find_by_id(params["id"])
   @hotels = Hotel.get_all()
   @travel_agents = TravelAgent.get_all()
-  @edit = true
   erb(:"holiday/edit")
 end
 
