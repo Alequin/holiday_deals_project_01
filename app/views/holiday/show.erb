@@ -13,6 +13,9 @@
           <p class="small_text">£<%= deal_cost %> - <%= deal.percentage_off %>% off</p>
           <p class="small_text">From: <%= deal.get_formatted_start_date() %></p>
           <p class="small_text">Till: <%= deal.get_formatted_end_date() %></p>
+          <form action="/deal/<%= deal.id %>" method="post">
+            <input type="submit" value="Delete this deal">
+          </form>
           <form action="/deal/<%= deal.id %>/delete" method="post">
             <input type="submit" value="Delete this deal">
           </form>

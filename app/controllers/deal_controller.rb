@@ -38,8 +38,8 @@ get("/hotel/:id/deal") do
   erb(:"deal/index")
 end
 
-get("/deal/new") do
-  erb(:"deal/new")
+get("/deal/:id/edit") do
+
 end
 
 post("/holidays/:holiday_id/deal") do
